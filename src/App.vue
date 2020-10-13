@@ -96,26 +96,30 @@ export default {
           middleName: this.middleName,
           lastName: this.lastName
         })
-      }).then(response => {
-        console.log(response.data);
-        this.isApplicantCreated = true;
+      })
+        .then(response => {
+          console.log(response.data);
+          this.isApplicantCreated = true;
 
-        renderButton({
-          apiKey: "0ba7cb3544804479a2cdeac6e7700228",
-          applicantId: "",
-          target: "#button",
-          onCancelled: data => {
-            console.log(data);
-          },
-          onSuccess: data => {
-            console.log(data);
-          },
-          onError: err => {
-            console.log(err);
-          },
-          steps: ["welcome", "selfie", "document", "finish"]
+          renderButton({
+            apiKey: "0ba7cb3544804479a2cdeac6e7700228",
+            applicantId: "",
+            target: "#button",
+            onCancelled: data => {
+              console.log(data);
+            },
+            onSuccess: data => {
+              console.log(data);
+            },
+            onError: err => {
+              console.log(err);
+            },
+            steps: ["welcome", "selfie", "document", "finish"]
+          });
+        })
+        .catch(err => {
+          console.log(err);
         });
-      });
     }
   },
   validations: {
