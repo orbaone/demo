@@ -59,7 +59,14 @@
           Create Applicant
         </button>
       </div>
-      <div v-else>
+      <div v-show="isApplicantCreated" style="text-align: center;">
+        <div
+          style="display:flex; width: 100%; justify-content: center; font-weight: 800; font-size: 22px; color: #676767;"
+        >
+          <p style="margin-right: 5px;">{{ this.firstName }}</p>
+          <p style="margin-right: 5px;">{{ this.middleName }}</p>
+          <p style="margin-right: 5px;">{{ this.lastName }}</p>
+        </div>
         <div id="button"></div>
       </div>
     </div>
@@ -83,13 +90,11 @@ export default {
   methods: {
     createApplicant() {
       this.isApplicantCreated = false;
-      fetch("https://api.t3std3v.orbaone.com/api/v1/applicants/create", {
+      fetch("https://thirdparty.t3std3v.orbaone.com/applicants/create", {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
-          ApiKey: `0ba7cb3544804479a2cdeac6e7700228`,
-          Secret: `f604eb9406354cf0b4ddca2290f0e880bfd98149a03446be9b83136d9ebb07c2`
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           firstName: this.firstName,
@@ -97,13 +102,11 @@ export default {
           lastName: this.lastName
         })
       })
-        .then(response => {
-          console.log(response.data);
-          this.isApplicantCreated = true;
-
+        .then(async response => {
+          const data = await response.json();
           renderButton({
             apiKey: "0ba7cb3544804479a2cdeac6e7700228",
-            applicantId: "1",
+            applicantId: `${data.applicantId}`,
             target: "#button",
             onCancelled: data => {
               console.log(data);
@@ -116,6 +119,7 @@ export default {
             },
             steps: ["welcome", "selfie", "document", "finish"]
           });
+          this.isApplicantCreated = true;
         })
         .catch(err => {
           console.log(err);
