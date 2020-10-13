@@ -103,7 +103,7 @@ export default {
 
           renderButton({
             apiKey: "0ba7cb3544804479a2cdeac6e7700228",
-            applicantId: "",
+            applicantId: "1",
             target: "#button",
             onCancelled: data => {
               console.log(data);
