@@ -5,6 +5,7 @@ import "@/plugins/vuelidate";
 import "@/assets/css/index.css";
 
 import dotenv from "dotenv";
+import "./assets/tailwind.css";
 dotenv.config();
 
 Vue.config.productionTip = false;

@@ -1,50 +1,46 @@
 <template>
   <div id="app">
-    <div style="display:flex; flex-direction: column; justify-content: center;">
-      <div style="text-align: center;">
-        <img
-          style="height: 10rem; margin:0 auto; margin-bottom: 20px;"
-          src="@/assets/logo.png"
-          alt="logo"
-        />
+    <div class="flex flex-col items-center" style="min-width: 250px;">
+      <div class="w-full text-center">
+        <img class="h-48 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
       </div>
-      <div
-        v-if="!isApplicantCreated"
-        style="display:flex; flex-direction: column;"
-      >
+      <div v-if="!this.isApplicantCreated" class="flex flex-col">
         <div>
-          <p class="text-sm">First Name</p>
+          <p class="text-sm mb-2">First Name</p>
           <input
             type="text"
             name="first-name"
             id="first-name"
             class="input"
+            placeholder="John"
             v-model="$v.firstName.$model"
           />
         </div>
         <p v-if="$v.firstName.$error" class="form-error">
           Please enter a first name.
         </p>
-        <div>
-          <p class="text-sm">Middle Name</p>
+        <div class="mt-4">
+          <p class="text-sm mb-2">Middle Name</p>
           <input
             type="text"
             name="middle-name"
             id="middle-name"
             class="input"
+            placeholder="Anthony"
             v-model="$v.middleName.$model"
           />
         </div>
         <p v-if="$v.middleName.$error" class="form-error">
           Please enter a middle name.
         </p>
-        <div>
-          <p class="text-sm">Last Name</p>
+        <div class="mt-4">
+          <p class="text-sm mb-2">Last Name</p>
           <input
             type="text"
             name="last-name"
             id="last-name"
             class="input"
+            placeholder="Doe"
             v-model="$v.lastName.$model"
           />
         </div>
@@ -53,21 +49,21 @@
         </p>
         <button
           :disabled="$v.$invalid"
-          class="button"
+          class="button w-full"
           @click="this.createApplicant"
         >
           Create Applicant
         </button>
       </div>
-      <div v-show="isApplicantCreated" style="text-align: center;">
-        <div
-          style="display:flex; width: 100%; justify-content: center; font-weight: 800; font-size: 22px; color: #676767;"
-        >
-          <p style="margin-right: 5px;">{{ this.firstName }}</p>
-          <p style="margin-right: 5px;">{{ this.middleName }}</p>
-          <p style="margin-right: 5px;">{{ this.lastName }}</p>
+      <div v-show="this.isApplicantCreated" class="w-full text-center">
+        <div class="flex w-full justify-center font-bold">
+          <p class="text-3xl text-gray-800 my-4">
+            {{ this.firstName }} {{ this.middleName }} {{ this.lastName }}
+          </p>
         </div>
-        <div id="button"></div>
+        <div>
+          <div id="button"></div>
+        </div>
       </div>
     </div>
   </div>
