@@ -86,7 +86,7 @@ export default {
   methods: {
     createApplicant() {
       this.isApplicantCreated = false;
-      fetch("https://thirdparty.t3std3v.orbaone.com/applicants/create", {
+      fetch("https://vendor-api-staging.orbaone.com/applicants/create", {
         method: "POST",
         headers: {
           Accept: "application/json",
