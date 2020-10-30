@@ -70,7 +70,7 @@
 </template>
 <script>
 import { required } from "vuelidate/lib/validators";
-import { renderButton } from "@orbaone/core";
+import { renderButton } from "../lib/index";
 
 export default {
   name: "App",
