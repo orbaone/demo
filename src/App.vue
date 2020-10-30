@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p class="absolute right-0 top-0 mt-4 mr-4">{{ version }}</p>
     <div class="flex flex-col items-center" style="min-width: 250px;">
       <div class="w-full text-center">
         <img class="h-48 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
@@ -72,11 +73,14 @@
 import { required } from "vuelidate/lib/validators";
 import { renderButton } from "@orbaone/core";
 
+const pkg = require("../package.json");
+
 export default {
   name: "App",
   components: {},
   data() {
     return {
+      version: `v${pkg.version}-${process.env.NODE_ENV}`,
       isApplicantCreated: false,
       firstName: "",
       middleName: "",
@@ -86,7 +90,7 @@ export default {
   methods: {
     createApplicant() {
       this.isApplicantCreated = false;
-      fetch("https://thirdparty.t3std3v.orbaone.com/applicants/create", {
+      fetch("https://vendorapi.orbaone.com/applicants/create", {
         method: "POST",
         headers: {
           Accept: "application/json",
