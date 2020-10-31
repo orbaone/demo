@@ -104,7 +104,7 @@ export default {
           const data = await response.json();
           renderButton({
             apiKey: "7f28e4ecf15449888649f28a7a7ab8cb",
-            applicantId: `${data.applicantId}`,
+            applicantId: `${data.applicant_id}`,
             target: "#button",
             onCancelled: data => {
               console.log(data);
