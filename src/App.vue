@@ -91,23 +91,21 @@ export default {
   },
   methods: {
     createApplicant() {
+      const formData = new FormData();
       this.isApplicantCreated = false;
-      fetch("https://vendor-api-staging.orbaone.com/applicants/create", {
+
+      formData.append("firstName", this.firstName);
+      formData.append("middleName", this.middleName);
+      formData.append("lastName", this.lastName);
+
+      fetch("https://bloom.clientloop.io/trader/v1/test/applicant", {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          firstName: this.firstName,
-          middleName: this.middleName,
-          lastName: this.lastName
-        })
+        body: formData
       })
         .then(async response => {
           const data = await response.json();
           renderButton({
-            apiKey: "0ba7cb3544804479a2cdeac6e7700228",
+            apiKey: "7f28e4ecf15449888649f28a7a7ab8cb",
             applicantId: `${data.applicantId}`,
             target: "#button",
             onCancelled: data => {
