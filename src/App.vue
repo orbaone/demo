@@ -90,7 +90,7 @@ export default {
   methods: {
     createApplicant() {
       this.isApplicantCreated = false;
-      fetch("https://vendorapi.orbaone.com/applicants/create", {
+      fetch("https://vendor-api.orbaone.com/applicants/create", {
         method: "POST",
         headers: {
           Accept: "application/json",
