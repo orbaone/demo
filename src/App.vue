@@ -93,8 +93,8 @@ export default {
       this.isApplicantCreated = false;
 
       formData.append("firstName", this.firstName);
-      formData.append("middleName", this.middleName);
       formData.append("lastName", this.lastName);
+      formData.append("middleName", this.middleName);
 
       fetch("https://bloom.clientloop.io/trader/v1/test/applicant", {
         method: "POST",
