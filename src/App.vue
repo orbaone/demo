@@ -91,21 +91,24 @@ export default {
   },
   methods: {
     createApplicant() {
-      const formData = new FormData();
       this.isApplicantCreated = false;
 
-      formData.append("firstName", this.firstName);
-      formData.append("middleName", this.middleName);
-      formData.append("lastName", this.lastName);
-
-      fetch("https://bloom.clientloop.io/trader/v1/test/applicant", {
+      fetch("/api/createApplicant", {
         method: "POST",
-        body: formData
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: this.firstName,
+          middleName: this.middleName,
+          lastName: this.lastName
+        })
       })
         .then(async response => {
           const data = await response.json();
           renderButton({
-            apiKey: "7f28e4ecf15449888649f28a7a7ab8cb",
+            apiKey: `${process.env.VUE_APP_API_KEY}`,
             applicantId: `${data.applicantId}`,
             target: "#button",
             onCancelled: data => {
