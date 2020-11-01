@@ -1,21 +1,34 @@
-module.exports = (req, res) => {
-  const {
-    query: { name }
-  } = req;
-  //   const apiKey = "7f28e4ecf15449888649f28a7a7ab8cb";
-  //   const apiSecret = "d124c5b6d1144fdea09d5315e8f49d2d";
+import fetch from "node-fetch";
 
-  fetch("https://api.orbaone.com/applicants/create", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      firstName: this.firstName,
-      middleName: this.middleName,
-      lastName: this.lastName
-    })
-  });
-  res.send(`Hello ${name}!`);
+module.exports = async (req, res) => {
+  const apiKey = process.env.API_KEY;
+  const secretKey = process.env.SECRET_KEY;
+  const { firstName, middleName, lastName } = req.body;
+  try {
+    const response = await fetch(
+      "https://api.orbaone.com/api/v1/applicants/create",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          ApiKey: apiKey,
+          Secret: secretKey
+        },
+        body: JSON.stringify({
+          firstName,
+          middleName,
+          lastName
+        })
+      }
+    );
+    if (response.status === 200) {
+      const json = await response.json();
+      res.send(json);
+    } else {
+      res.status(response.status).send(await response.json());
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };

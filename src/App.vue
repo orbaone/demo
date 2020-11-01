@@ -89,16 +89,19 @@ export default {
   },
   methods: {
     createApplicant() {
-      const formData = new FormData();
       this.isApplicantCreated = false;
 
-      formData.append("firstName", this.firstName);
-      formData.append("lastName", this.lastName);
-      formData.append("middleName", this.middleName);
-
-      fetch("https://bloom.clientloop.io/trader/v1/test/applicant", {
+      fetch("/api/createApplicant", {
         method: "POST",
-        body: formData
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: this.firstName,
+          middleName: this.middleName,
+          lastName: this.lastName
+        })
       })
         .then(async response => {
           const data = await response.json();
