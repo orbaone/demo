@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   const { firstName, middleName, lastName } = req.body;
   try {
     const response = await fetch(
-      "https://api.orbaone.com/api/v1/applicants/create",
+      "https://api-staging.orbaone.com/api/v1/applicants/create",
       {
         method: "POST",
         headers: {
