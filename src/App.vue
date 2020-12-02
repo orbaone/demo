@@ -73,7 +73,7 @@
 </template>
 <script>
 import { required } from "vuelidate/lib/validators";
-import { renderButton } from "../lib/index";
+import { renderButton } from "@orbaone/core";
 
 const pkg = require("../package.json");
 
