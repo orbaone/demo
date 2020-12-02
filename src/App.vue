@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <p class="absolute right-0 top-0 mt-4 mr-4">{{ version }}</p>
+    <div>
+      <p class="absolute right-0 top-0 mt-4 mr-4">v{{ version }}</p>
+    </div>
     <div class="flex flex-col items-center" style="min-width: 250px;">
       <div class="w-full text-center">
         <img class="h-48 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
@@ -71,7 +73,7 @@
 </template>
 <script>
 import { required } from "vuelidate/lib/validators";
-import { renderButton } from "@orbaone/core";
+import { renderButton } from "../lib/index";
 
 const pkg = require("../package.json");
 
@@ -80,7 +82,7 @@ export default {
   components: {},
   data() {
     return {
-      version: `v${pkg.version}-${process.env.NODE_ENV}`,
+      version: `${pkg.version}-${process.env.NODE_ENV}`,
       isApplicantCreated: false,
       firstName: "",
       middleName: "",
@@ -106,7 +108,7 @@ export default {
         .then(async response => {
           const data = await response.json();
           renderButton({
-            apiKey: "7f28e4ecf15449888649f28a7a7ab8cb",
+            apiKey: `${process.env.VUE_APP_API_KEY}`,
             applicantId: `${data.applicantId}`,
             target: "#button",
             onCancelled: data => {

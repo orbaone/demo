@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ![](./screenshots/banner.png)
+=======
+# demo
+>>>>>>> staging
 
 <p align="center">
   </br>
@@ -50,6 +54,7 @@ After installing the dependencies and create environmental variables, build the 
 npm run build
 ```
 
+<<<<<<< HEAD
 Run the tests
 
 ```sh
@@ -62,3 +67,5 @@ Run the development server
 npm run serve
 ```
 
+=======
+>>>>>>> staging

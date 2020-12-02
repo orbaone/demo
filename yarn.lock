@@ -944,11 +944,6 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@orbaone/core@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@orbaone/core/-/core-1.0.9.tgz#184b0895016584ac6f9cebcbe7a13c9a2918b5e0"
-  integrity sha512-kVunFFh9U8WDq0JWiNVI3bS4vDdDi7emYa2+OD7fcnvLLurNyD5UxBp5DIdvkuwrZM2b+t1nwycW3LFLF+OlXA==
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.1"
   resolved "https://registry.npm.taobao.org/@samverschueren/stream-to-observable/download/@samverschueren/stream-to-observable-0.3.1.tgz#a21117b19ee9be70c379ec1877537ef2e1c63301"

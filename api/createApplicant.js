@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
       const json = await response.json();
       res.send(json);
     } else {
-      res.status(response.status).send(await response.json());
+      throw new Error("Applicant could not be created");
     }
   } catch (error) {
     res.status(500).send(error);
