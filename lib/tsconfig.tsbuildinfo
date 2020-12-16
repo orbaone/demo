@@ -213,7 +213,7 @@
       },
       "../src/styles/styles.ts": {
         "version": 1,
-        "signature": "-23055797953",
+        "signature": "16616231963",
         "affectsGlobalScope": false
       },
       "../src/styles/templates.ts": {
@@ -223,12 +223,17 @@
       },
       "../src/helpers/defaultconfig.ts": {
         "version": 1,
-        "signature": "672817501",
+        "signature": "-11424208151",
         "affectsGlobalScope": false
       },
       "../src/elements/button.ts": {
         "version": 1,
         "signature": "17603759451",
+        "affectsGlobalScope": false
+      },
+      "../src/elements/constants.ts": {
+        "version": 1,
+        "signature": "-4096319434",
         "affectsGlobalScope": false
       },
       "../src/elements/iframe.ts": {
@@ -967,11 +972,6 @@
         "affectsGlobalScope": false
       },
       "../node_modules/jest/build/jest.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/json-schema/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -2024,6 +2024,8 @@
         "../src/styles/templates.ts"
       ],
       "../src/elements/iframe.ts": [
+        "../src/elements/constants.ts",
+        "../src/helpers/defaultconfig.ts",
         "../src/styles/styles.ts"
       ],
       "../src/helpers/utils.ts": [
@@ -2866,7 +2868,6 @@
       "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
       "../node_modules/@types/istanbul-lib-report/index.d.ts",
       "../node_modules/@types/istanbul-reports/index.d.ts",
-      "../node_modules/@types/json-schema/index.d.ts",
       "../node_modules/@types/minimatch/index.d.ts",
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -3041,6 +3042,7 @@
       "../node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../node_modules/typescript/lib/lib.esnext.string.d.ts",
       "../src/elements/button.ts",
+      "../src/elements/constants.ts",
       "../src/elements/iframe.ts",
       "../src/helpers/defaultconfig.ts",
       "../src/helpers/types.ts",
@@ -3296,10 +3298,6 @@
       ],
       [
         "../node_modules/@types/istanbul-reports/index.d.ts",
-        1
-      ],
-      [
-        "../node_modules/@types/json-schema/index.d.ts",
         1
       ],
       [
@@ -3856,6 +3854,10 @@
       ],
       [
         "../src/elements/button.ts",
+        1
+      ],
+      [
+        "../src/elements/constants.ts",
         1
       ],
       [
