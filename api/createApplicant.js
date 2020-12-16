@@ -29,6 +29,6 @@ module.exports = async (req, res) => {
       throw new Error("Applicant could not be created");
     }
   } catch (error) {
-    res.status(500).send(error);
+    throw new Error("Applicant could not be created");
   }
 };
