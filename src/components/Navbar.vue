@@ -14,11 +14,12 @@
       >
         Login
       </router-link>
-      <button
+      <router-link
+        to="/register"
         class="px-3 py-2 border-2 border-orange-400 rounded bg-orange-400 text-white"
       >
         Register
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
