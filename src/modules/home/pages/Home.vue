@@ -3,27 +3,7 @@
     <div>
       <p class="absolute right-0 bottom-0 mb-4 mr-4">v{{ version }}</p>
     </div>
-    <div class="flex p-5 justify-between items-center container mx-auto">
-      <div>
-        <img class="h-10 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
-      </div>
-      <div class="flex items-center">
-        <p class="mr-3">Home</p>
-        <p class="mr-3 opacity-50">Destination</p>
-        <p class="mr-3 opacity-50">About</p>
-        <p class="mr-5 opacity-50">Partner</p>
-        <button
-          class="px-3 py-2 border-2 border-orange-400 rounded text-orange-400 mr-4"
-        >
-          Login
-        </button>
-        <button
-          class="px-3 py-2 border-2 border-orange-400 rounded bg-orange-400 text-white"
-        >
-          Register
-        </button>
-      </div>
-    </div>
+    <navbar />
     <div class="flex flex-grow w-full items-center container mx-auto">
       <div class="w-1/2">
         <h1 class="text-6xl font-serif text-gray-800">
@@ -34,11 +14,12 @@
           Orba One's integration might look like. <br />Try creating an account
           and verifying your identity.
         </p>
-        <button
+        <router-link
+          to="/login"
           class="px-5 py-2 border-2 border-orange-400 rounded text-orange-400 mr-4"
         >
           Login
-        </button>
+        </router-link>
         <button
           class="px-5 py-2 border-2 border-orange-400 rounded bg-orange-400 text-white"
         >
@@ -55,11 +36,15 @@
 import { required } from "vuelidate/lib/validators";
 import { renderButton } from "@orbaone/core";
 
+import Navbar from "../../../components/Navbar.vue";
+
 const pkg = require("../../../../package.json");
 
 export default {
   name: "App",
-  components: {},
+  components: {
+    navbar: Navbar
+  },
   data() {
     return {
       version: `${pkg.version}-${process.env.NODE_ENV}`,

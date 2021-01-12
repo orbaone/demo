@@ -21,26 +21,6 @@
     color: #FC5C65;
 }
 
-.button {
-    transition: background 200ms ease-in;
-    text-align: center;
-    margin-top: 15px;
-    padding: 10px 6px 10px 6px;
-    background: #3d71e3;
-    color: white;
-    border-radius: 5px;
-    width: 100%;
-    border: 1px solid #3d71e3;
-
-}
-
-button:hover {
-    background-color: #365ebd;
-}
-
-button[disabled] {
-    opacity: 0.3;
-}
 .form-error {
     color:#FC5C65;
     font-size: 0.7em;
