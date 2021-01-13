@@ -23,7 +23,9 @@
     </div>
     <div class="flex items-center" v-else>
       <p class="text-gray-800 mr-3">Hi {{ this.firstName }}</p>
-      <p class="text-orange-500 font-bold" @click="this.logout">Logout</p>
+      <p class="text-orange-500 font-bold cursor-pointer" @click="this.logout">
+        Logout
+      </p>
     </div>
   </div>
 </template>
@@ -52,7 +54,8 @@ export default {
   },
   methods: {
     async logout() {
-      await localforage.clear();
+      await localforage.setItem("isAuthenticated", false);
+      window.location.reload();
     }
   }
 };

@@ -113,18 +113,20 @@ export default {
         const firstName = await localforage.getItem("firstName");
         const lastName = await localforage.getItem("lastName");
         const email = await localforage.getItem("email");
-
-        if (firstName && lastName && email) {
-          localforage.setItem("isAuthenticated", true).then(() => {
-            this.$router.push({ name: "dashboard" });
-          });
-        } else {
-          this.error = "User Account not found, refresh and try again";
+        console.log(this.email);
+        if (this.loginForm.email === email) {
+          if (firstName && lastName) {
+            localforage.setItem("isAuthenticated", true).then(() => {
+              this.$router.push({ name: "dashboard" });
+            });
+          } else {
+            this.error = "User Account not found, refresh and try again";
+          }
         }
+        this.error = "Email not found pal :(";
       } catch (err) {
         this.error = "User Account not found, refresh and try again";
       }
-      localforage.setItem("isAuthenticated");
     }
   }
 };
