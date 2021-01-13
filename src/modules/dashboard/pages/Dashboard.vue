@@ -107,9 +107,9 @@
   </div>
 </template>
 <script>
-import Navbar from "../../../components/Navbar";
-import DestinationCard from "../components/DestinationCard";
-import TravelBlogCard from "../components/TravelBlogCard";
+import Navbar from "@/components/Navbar";
+import DestinationCard from "@/modules/dashboard/components/DestinationCard";
+import TravelBlogCard from "@/modules/dashboard/components/TravelBlogCard";
 export default {
   components: {
     navbar: Navbar,

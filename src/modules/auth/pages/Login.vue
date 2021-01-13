@@ -79,7 +79,9 @@
 </template>
 <script>
 import { required, email } from "vuelidate/lib/validators";
-import Navbar from "../../../components/Navbar";
+import localforage from "localforage";
+
+import Navbar from "@/components/Navbar";
 export default {
   components: {
     navbar: Navbar
@@ -103,6 +105,26 @@ export default {
       password: {
         required
       }
+    }
+  },
+  methods: {
+    async submitForm() {
+      try {
+        const firstName = await localforage.getItem("firstName");
+        const lastName = await localforage.getItem("lastName");
+        const email = await localforage.getItem("email");
+
+        if (firstName && lastName && email) {
+          localforage.setItem("isAuthenticated", true).then(() => {
+            this.$router.push({ name: "dashboard" });
+          });
+        } else {
+          this.error = "User Account not found, refresh and try again";
+        }
+      } catch (err) {
+        this.error = "User Account not found, refresh and try again";
+      }
+      localforage.setItem("isAuthenticated");
     }
   }
 };

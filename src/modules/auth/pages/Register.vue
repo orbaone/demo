@@ -57,26 +57,6 @@
         </div>
       </div>
       <div class="flex flex-col mt-4">
-        <label for="username" class="text-sm text-gray-700">Username</label>
-        <input
-          v-model="$v.registerForm.username.$model"
-          class="input"
-          type="text"
-          name="username"
-          autofocus
-          data-testid="register-username-input"
-          placeholder="johndoe876"
-        />
-        <div v-if="$v.registerForm.username.$error">
-          <p v-if="$v.registerForm.username.$invalid" class="form-error">
-            The username entered is invalid
-          </p>
-          <p v-else-if="$v.registerForm.username.required" class="form-error">
-            Please enter an username
-          </p>
-        </div>
-      </div>
-      <div class="flex flex-col mt-4">
         <label for="email" class="text-sm text-gray-700">Email</label>
         <input
           v-model="$v.registerForm.email.$model"
@@ -142,8 +122,9 @@
 
 <script>
 import { required, email } from "vuelidate/lib/validators";
+import localforage from "localforage";
 
-import Navbar from "../../../components/Navbar";
+import Navbar from "@/components/Navbar";
 export default {
   components: {
     navbar: Navbar
@@ -156,8 +137,7 @@ export default {
         email: "",
         password: "",
         firstName: "",
-        lastName: "",
-        username: ""
+        lastName: ""
       }
     };
   },
@@ -173,11 +153,22 @@ export default {
       lastName: {
         required
       },
-      username: {
-        required: true
-      },
       password: {
         required
+      }
+    }
+  },
+  methods: {
+    async submitForm() {
+      try {
+        localforage.setItem("firstName", this.registerForm.firstName);
+        localforage.setItem("lastName", this.registerForm.lastName);
+        localforage.setItem("email", this.registerForm.email);
+        localforage.setItem("isAuthenticated", true).then(() => {
+          this.$router.push({ name: "dashboard" });
+        });
+      } catch (error) {
+        this.error = "An Error occured, try refreshing :(";
       }
     }
   }

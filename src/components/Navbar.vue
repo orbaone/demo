@@ -3,7 +3,7 @@
     <div>
       <img class="h-10 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center" v-if="!isAuthenticated">
       <router-link to="/" class="mr-3">Home</router-link>
       <p class="mr-3 opacity-50">Destination</p>
       <p class="mr-3 opacity-50">About</p>
@@ -21,5 +21,39 @@
         Register
       </router-link>
     </div>
+    <div class="flex items-center" v-else>
+      <p class="text-gray-800 mr-3">Hi {{ this.firstName }}</p>
+      <p class="text-orange-500 font-bold" @click="this.logout">Logout</p>
+    </div>
   </div>
 </template>
+<script>
+import localforage from "localforage";
+
+export default {
+  async created() {
+    try {
+      const firstName = await localforage.getItem("firstName");
+      const isAuthenticated = await localforage.getItem("isAuthenticated");
+      if (isAuthenticated && firstName) {
+        this.firstName = firstName;
+        this.isAuthenticated = isAuthenticated;
+      }
+    } catch (err) {
+      this.error = "Something went wrong :(";
+    }
+  },
+  data() {
+    return {
+      firstName: "",
+      isAuthenticated: false,
+      error: ""
+    };
+  },
+  methods: {
+    async logout() {
+      await localforage.clear();
+    }
+  }
+};
+</script>
