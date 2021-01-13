@@ -94,7 +94,7 @@
               <p>Please verify your identity to begin booking</p>
               <button
                 class="bg-orange-500 text-white rounded px-4 py-2 mt-2"
-                id="orba-button"
+                id="verify-me"
               >
                 Verify my Identity
               </button>
@@ -108,6 +108,9 @@
 </template>
 <script>
 import Navbar from "@/components/Navbar";
+import localforage from "localforage";
+import { renderButton } from "@orbaone/core";
+
 import DestinationCard from "@/modules/dashboard/components/DestinationCard";
 import TravelBlogCard from "@/modules/dashboard/components/TravelBlogCard";
 export default {
@@ -115,11 +118,63 @@ export default {
     navbar: Navbar,
     "destination-card": DestinationCard,
     "travel-blog-card": TravelBlogCard
+  },
+  data() {
+    return {
+      applicantId: ""
+    };
+  },
+  async created() {
+    const applicantId = await localforage.getItem("applicantId");
+    const firstName = await localforage.getItem("firstName");
+    const lastName = await localforage.getItem("firstName");
+    if (!applicantId) {
+      if (firstName && lastName) {
+        fetch("/api/createApplicant", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            firstName,
+            middleName: "",
+            lastName
+          })
+        })
+          .then(async response => {
+            const data = await response.json();
+            localforage.setItem("applicantId", data.applicantId);
+          })
+          .catch(() => {
+            this.error = "Could not create applicant :(";
+          });
+      }
+    }
+  },
+  async mounted() {
+    const applicantId = await localforage.getItem("applicantId");
+    if (applicantId) {
+      renderButton({
+        apiKey: `${process.env.VUE_APP_API_KEY}`,
+        applicantId: `${applicantId}`,
+        disableStyle: true,
+        target: "#verify-me",
+        onCancelled: data => {
+          console.log(data);
+        },
+        onSuccess: data => {
+          console.log(data);
+        },
+        onError: err => {
+          console.log(err);
+        },
+        steps: ["welcome", "selfie", "document", "finish"]
+      });
+    }
   }
 };
 </script>
-DestinationCard
-
 <style scoped>
 .navbar-banner {
   width: 100vw;

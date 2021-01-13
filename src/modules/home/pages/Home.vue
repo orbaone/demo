@@ -35,9 +35,8 @@
 </template>
 <script>
 import { required } from "vuelidate/lib/validators";
-import { renderButton } from "@orbaone/core";
 
-import Navbar from "../../../components/Navbar.vue";
+import Navbar from "@/components/Navbar.vue";
 
 const pkg = require("../../../../package.json");
 
@@ -54,46 +53,6 @@ export default {
       middleName: "",
       lastName: ""
     };
-  },
-  methods: {
-    createApplicant() {
-      this.isApplicantCreated = false;
-
-      fetch("/api/createApplicant", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          firstName: this.firstName,
-          middleName: this.middleName,
-          lastName: this.lastName
-        })
-      })
-        .then(async response => {
-          const data = await response.json();
-          renderButton({
-            apiKey: `${process.env.VUE_APP_API_KEY}`,
-            applicantId: `${data.applicantId}`,
-            target: "#button",
-            onCancelled: data => {
-              console.log(data);
-            },
-            onSuccess: data => {
-              console.log(data);
-            },
-            onError: err => {
-              console.log(err);
-            },
-            steps: ["welcome", "selfie", "document", "finish"]
-          });
-          this.isApplicantCreated = true;
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
   },
   validations: {
     firstName: {
