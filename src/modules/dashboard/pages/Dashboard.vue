@@ -93,8 +93,8 @@
             <div class="flex flex-col sm:block mt-4">
               <p>Please verify your identity to begin booking</p>
               <button
-                class="bg-orange-500 text-white rounded px-4 py-2 mt-2"
-                id="verify-me"
+                class="bg-orange-500 opacity-75 text-white rounded px-4 py-2 mt-2"
+                disabled="true"
               >
                 Verify my Identity
               </button>
