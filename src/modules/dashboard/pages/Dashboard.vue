@@ -22,44 +22,44 @@
           </h1>
           <p class="text-xl font-medium">Featured destinations</p>
         </div>
-        <div class="flex my-3">
+        <div class="flex flex-col md:flex-row my-3">
           <destination-card
             background="/photo-one.png"
             location="Raja Ampat"
             country="Indonesia"
-            class="w-1/3 mr-3"
+            class="w-full mb-3 sm:w-1/3 sm:mr-3"
           ></destination-card>
           <destination-card
             background="/photo-two.png"
             location="Fanjingshan"
             country="China"
-            class="w-1/3 mr-3"
+            class="w-full mb-3 sm:w-1/3 sm:mr-3"
           ></destination-card>
           <destination-card
             background="/photo-three.png"
             location="Vevey"
             country="Switzerland"
-            class="w-1/3 mr-3"
+            class="w-full mb-3 sm:w-1/3 sm:mr-3"
           ></destination-card>
         </div>
-        <div class="flex">
+        <div class="flex flex-col sm:flex-row">
           <destination-card
             background="/photo-one.png"
             location="Raja Ampat"
             country="Indonesia"
-            class="w-1/3 mr-3"
+            class="w-full mb-3 sm:w-1/3 sm:mr-3"
           ></destination-card>
           <destination-card
             background="/photo-two.png"
             location="Fanjingshan"
             country="China"
-            class="w-1/3 mr-3"
+            class="w-full mb-3 sm:w-1/3 sm:mr-3"
           ></destination-card>
           <destination-card
             background="/photo-three.png"
             location="Vevey"
             country="Switzerland"
-            class="w-1/3 mr-3"
+            class="w-full mb-3 sm:w-1/3 sm:mr-3"
           ></destination-card>
         </div>
       </div>
