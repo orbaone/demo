@@ -1,8 +1,5 @@
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
-    <div>
-      <p class="absolute right-0 bottom-0 mb-4 mr-4">v{{ version }}</p>
-    </div>
     <navbar />
     <div class="flex flex-grow w-full items-center container mx-auto">
       <div class="flex flex-col w-full p-4 sm:w-1/2">
@@ -40,8 +37,6 @@ import { required } from "vuelidate/lib/validators";
 
 import Navbar from "@/components/Navbar.vue";
 
-const pkg = require("../../../../package.json");
-
 export default {
   name: "App",
   components: {
@@ -49,7 +44,6 @@ export default {
   },
   data() {
     return {
-      version: `${pkg.version}-${process.env.NODE_ENV}`,
       isApplicantCreated: false,
       firstName: "",
       middleName: "",
