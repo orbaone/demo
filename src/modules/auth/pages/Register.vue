@@ -161,6 +161,7 @@ export default {
   methods: {
     async submitForm() {
       try {
+        await localforage.clear();
         localforage.setItem("firstName", this.registerForm.firstName);
         localforage.setItem("lastName", this.registerForm.lastName);
         localforage.setItem("email", this.registerForm.email);

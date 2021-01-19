@@ -8,7 +8,7 @@
         Please verify your indentity to begin booking
       </p>
       <button class="banner-button flex items-center justify-center">
-        <p class="banner-button-text">Verify my indetity</p>
+        <p class="banner-button-text" id="verify-me">Verify my indetity</p>
       </button>
     </div>
     <div class="flex container mx-auto mt-10">
@@ -127,7 +127,7 @@ export default {
   async created() {
     const applicantId = await localforage.getItem("applicantId");
     const firstName = await localforage.getItem("firstName");
-    const lastName = await localforage.getItem("firstName");
+    const lastName = await localforage.getItem("lastName");
     if (!applicantId) {
       if (firstName && lastName) {
         fetch("/api/createApplicant", {
@@ -144,7 +144,7 @@ export default {
         })
           .then(async response => {
             const data = await response.json();
-            localforage.setItem("applicantId", data.applicantId);
+            await localforage.setItem("applicantId", data.applicantId);
           })
           .catch(() => {
             this.error = "Could not create applicant :(";
