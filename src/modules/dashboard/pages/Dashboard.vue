@@ -96,7 +96,7 @@
                 class="bg-orange-500 opacity-75 text-white rounded px-4 py-2 mt-2"
                 disabled="true"
               >
-                Verify my Identity
+                Book Now
               </button>
             </div>
           </div>
