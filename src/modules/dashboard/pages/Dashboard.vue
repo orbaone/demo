@@ -133,37 +133,38 @@ export default {
     const lastName = await localforage.getItem("lastName");
     if (!applicantId) {
       if (firstName && lastName) {
-        fetch("/api/createApplicant", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            firstName,
-            middleName: "",
-            lastName
-          })
-        })
-          .then(async response => {
-            const data = await response.json();
-            this.applicantId = data.applicantId;
-
-            await localforage.setItem("applicantId", data.applicantId);
-          })
-          .catch(() => {
-            this.error = "Could not create applicant :(";
+        try {
+          const result = await fetch("/api/createApplicant", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              firstName,
+              middleName: "",
+              lastName
+            })
           });
+          const json = await result.json();
+          if (json.applicantId) {
+            await localforage.setItem("applicantId", json.applicantId);
+          } else {
+            this.error = "Applicant could not be created :(";
+          }
+        } catch (error) {
+          this.error = "Applicant could not be created";
+        }
       }
     }
   },
   async beforeMount() {
     const applicantId = await localforage.getItem("applicantId");
-    if (applicantId || this.applicantId) {
-      console.log("Applicant found, loading Orba One");
+
+    if (applicantId) {
       renderButton({
         apiKey: `${process.env.VUE_APP_API_KEY}`,
-        applicantId: `${applicantId}`,
+        applicantId: `${this.applicantId}`,
         disableStyle: true,
         target: "#verify-me",
         onCancelled: data => {
