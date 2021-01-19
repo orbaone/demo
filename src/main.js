@@ -11,7 +11,6 @@ import "./assets/tailwind.css";
 dotenv.config();
 
 Vue.config.productionTip = false;
-console.log(process.env);
 new Vue({
   router,
   render: h => h(App)

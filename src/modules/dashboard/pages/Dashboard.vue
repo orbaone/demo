@@ -11,8 +11,8 @@
         <p class="banner-button-text" id="verify-me">Verify my indetity</p>
       </button>
     </div>
-    <div class="flex container mx-auto mt-10">
-      <div class="w-2/3 mr-5">
+    <div class="flex flex-col w-full sm:flex-row container mx-auto mt-10">
+      <div class="w-full p-3 sm:w-2/3 sm:mr-5">
         <div class="flex flex-col items-baseline mb-5">
           <h1 class="text-4xl font-serif mr-3">
             Make your dream trip a reality
@@ -60,7 +60,7 @@
           ></destination-card>
         </div>
       </div>
-      <div class="w-1/3">
+      <div class="w-full sm:w-1/3 p-3">
         <div class="flex flex-col items-baseline mt-3 mb-10">
           <h1 class="text-2xl font-sans mr-3">
             Trip finder
@@ -90,7 +90,7 @@
                 </select>
               </div>
             </div>
-            <div class="mt-4">
+            <div class="flex flex-col sm:block mt-4">
               <p>Please verify your identity to begin booking</p>
               <button
                 class="bg-orange-500 text-white rounded px-4 py-2 mt-2"

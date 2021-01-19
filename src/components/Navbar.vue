@@ -1,7 +1,9 @@
 <template>
   <div class="flex p-5 justify-between items-center container mx-auto">
     <div>
-      <img class="h-10 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
+      <router-link to="/">
+        <img class="h-10 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
+      </router-link>
     </div>
     <div class="flex items-center" v-if="!isAuthenticated">
       <router-link to="/" class="mr-3">Home</router-link>
@@ -22,7 +24,12 @@
       </router-link>
     </div>
     <div class="flex items-center" v-else>
-      <p class="text-gray-800 mr-3">Hi {{ this.firstName }}</p>
+      <router-link
+        class="text-gray-800 mr-3 underline"
+        :to="{ name: 'dashboard' }"
+      >
+        Hi {{ this.firstName }}
+      </router-link>
       <p class="text-orange-500 font-bold cursor-pointer" @click="this.logout">
         Logout
       </p>

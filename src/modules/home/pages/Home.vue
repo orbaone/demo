@@ -5,7 +5,7 @@
     </div>
     <navbar />
     <div class="flex flex-grow w-full items-center container mx-auto">
-      <div class="w-1/2">
+      <div class="flex flex-col w-full p-4 sm:w-1/2">
         <h1 class="text-6xl font-serif text-gray-800">
           Explore and <br />Fake Travel
         </h1>
@@ -14,20 +14,22 @@
           Orba One's integration might look like. <br />Try creating an account
           and verifying your identity.
         </p>
-        <router-link
-          to="/login"
-          class="px-5 py-2 border-2 border-orange-400 rounded text-orange-400 mr-4"
-        >
-          Login
-        </router-link>
-        <router-link
-          to="/register"
-          class="px-5 py-2 border-2 border-orange-400 rounded bg-orange-400 text-white"
-        >
-          Register
-        </router-link>
+        <div class="flex flex-col sm:block">
+          <router-link
+            to="/login"
+            class="px-5 py-2 border-2 border-orange-400 rounded text-orange-400 mb-4 text-center sm:mr-4"
+          >
+            Login
+          </router-link>
+          <router-link
+            to="/register"
+            class="px-5 py-2 border-2 border-orange-400 rounded bg-orange-400 text-center text-white"
+          >
+            Register
+          </router-link>
+        </div>
       </div>
-      <div class="w-1/2">
+      <div class="hidden sm:block sm:w-1/2">
         <img src="@/assets/hero.png" alt="" />
       </div>
     </div>
