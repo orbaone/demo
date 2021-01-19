@@ -113,7 +113,6 @@ export default {
         const firstName = await localforage.getItem("firstName");
         const lastName = await localforage.getItem("lastName");
         const email = await localforage.getItem("email");
-        console.log(this.email);
         if (this.loginForm.email === email) {
           if (firstName && lastName) {
             localforage.setItem("isAuthenticated", true).then(() => {

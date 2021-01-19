@@ -7,8 +7,11 @@
       <p class="banner-text md:mb-0 mb-3 md:mr-8">
         Please verify your indentity to begin booking
       </p>
-      <button class="banner-button flex items-center justify-center">
-        <p class="banner-button-text" id="verify-me">Verify my indetity</p>
+      <button
+        class="banner-button flex items-center justify-center"
+        id="verify-me"
+      >
+        <p class="banner-button-text">Verify my indentity</p>
       </button>
     </div>
     <div class="flex flex-col w-full sm:flex-row container mx-auto mt-10">
@@ -124,7 +127,7 @@ export default {
       applicantId: ""
     };
   },
-  async created() {
+  async beforeCreate() {
     const applicantId = await localforage.getItem("applicantId");
     const firstName = await localforage.getItem("firstName");
     const lastName = await localforage.getItem("lastName");
@@ -152,7 +155,7 @@ export default {
       }
     }
   },
-  async mounted() {
+  async beforeMount() {
     const applicantId = await localforage.getItem("applicantId");
     if (applicantId) {
       renderButton({
