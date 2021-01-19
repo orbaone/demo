@@ -147,6 +147,8 @@ export default {
         })
           .then(async response => {
             const data = await response.json();
+            this.applicantId = data.applicantId;
+
             await localforage.setItem("applicantId", data.applicantId);
           })
           .catch(() => {
@@ -157,7 +159,8 @@ export default {
   },
   async beforeMount() {
     const applicantId = await localforage.getItem("applicantId");
-    if (applicantId) {
+    if (applicantId || this.applicantId) {
+      console.log("Applicant found, loading Orba One");
       renderButton({
         apiKey: `${process.env.VUE_APP_API_KEY}`,
         applicantId: `${applicantId}`,
