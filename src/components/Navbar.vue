@@ -7,9 +7,9 @@
     </div>
     <div class="flex items-center" v-if="!isAuthenticated">
       <router-link to="/" class="mr-3">Home</router-link>
-      <p class="mr-3 opacity-50">Destination</p>
-      <p class="mr-3 opacity-50">About</p>
-      <p class="mr-5 opacity-50">Partner</p>
+      <p class="hidden sm:block mr-3 opacity-50">Destination</p>
+      <p class="hidden sm:block mr-3 opacity-50">About</p>
+      <p class="hidden sm:block mr-5 opacity-50">Partner</p>
       <router-link
         to="/login"
         class="px-3 py-2 border-2 border-orange-400 rounded text-orange-400 mr-4"
