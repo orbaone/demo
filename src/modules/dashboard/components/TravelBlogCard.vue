@@ -8,22 +8,23 @@
       <div class="flex w-full my-3">
         <div
           class="rounded-lg"
-          style="width: 100px;background-image: url('/photo-three.png'); background-size: cover;"
+          style="min-width: 100px;background-image: url('/photo-three.png'); background-size: cover;"
         ></div>
         <div class="flex-grow p-2">
           <p class="text-gray-700 font-bold text-md">
-            Unbelievable country side in Veve, Switzerland
+            Unbelievable country side in <br />
+            Veve, Switzerland
           </p>
           <p class="text-sm text-gray-500 font-mono">@faketravel</p>
         </div>
         <div class="flex items-center">
-          <img src="../../../assets/images/arrow.svg" alt="" />
+          <img src="@/assets/images/arrow.svg" alt="arrow" />
         </div>
       </div>
       <div class="flex w-full my-3">
         <div
           class="rounded-lg"
-          style="width: 100px;background-image: url('/photo-two.png'); background-size: cover;"
+          style="min-width: 100px;background-image: url('/photo-two.png'); background-size: cover;"
         ></div>
         <div class="flex-grow p-2">
           <p class="text-gray-700 font-bold text-md">
@@ -33,13 +34,13 @@
           <p class="text-sm text-gray-500 font-mono">@faketravel</p>
         </div>
         <div class="flex items-center">
-          <img src="../../../assets/images/arrow.svg" alt="" />
+          <img src="@/assets/images/arrow.svg" alt="arrow" />
         </div>
       </div>
       <div class="flex w-full my-3">
         <div
           class="rounded-lg"
-          style="width: 100px;background-image: url('/photo-one.png'); background-size: cover;"
+          style="min-width: 100px;background-image: url('/photo-one.png'); background-size: cover;"
         ></div>
         <div class="flex-grow p-2">
           <p class="text-gray-700 font-bold text-md">
@@ -49,7 +50,7 @@
           <p class="text-sm text-gray-500 font-mono">@faketravel</p>
         </div>
         <div class="flex items-center">
-          <img src="../../../assets/images/arrow.svg" alt="" />
+          <img src="@/assets/images/arrow.svg" alt="arrow" />
         </div>
       </div>
     </div>
