@@ -164,7 +164,7 @@ export default {
     if (applicantId) {
       renderButton({
         apiKey: `${process.env.VUE_APP_API_KEY}`,
-        applicantId: `${this.applicantId}`,
+        applicantId: `${applicantId}`,
         disableStyle: true,
         target: "#verify-me",
         onCancelled: data => {
