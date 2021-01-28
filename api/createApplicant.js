@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   const { firstName, middleName, lastName } = req.body;
   try {
     const response = await fetch(
-      "https://api-staging.orbaone.com/api/v1/applicants/create",
+      "https://api.orbaone.com/api/v1/applicants/create",
       {
         method: "POST",
         headers: {
@@ -29,6 +29,8 @@ module.exports = async (req, res) => {
       throw new Error("Applicant could not be created");
     }
   } catch (error) {
-    throw new Error("Applicant could not be created");
+    res.status(500).json({
+      message: `Applicant could not be created, try checking out https://docs.orbaone.com/rest-api/endpoints`
+    });
   }
 };
