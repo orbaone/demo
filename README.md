@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-![](./screenshots/banner.png)
-=======
-# demo
->>>>>>> staging
 
+# Orba One Demo
 <p align="center">
   </br>
 
@@ -46,7 +42,12 @@ touch .env.development.local
 touch .env.production.local
 ```
 
-After add the `VUE_APP_ORBA_ONE_ENDPOINT` environmental variables to each for development and production, respectively.
+After add the following
+- `VUE_APP_ORBA_ONE_ENDPOINT` 
+- `API_KEY`
+- `SECRET_KEY`
+
+environmental variables to each for development and production, respectively.
 
 After installing the dependencies and create environmental variables, build the project by executing:
 
@@ -54,7 +55,6 @@ After installing the dependencies and create environmental variables, build the 
 npm run build
 ```
 
-<<<<<<< HEAD
 Run the tests
 
 ```sh
@@ -67,5 +67,3 @@ Run the development server
 npm run serve
 ```
 
-=======
->>>>>>> staging
