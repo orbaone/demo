@@ -15,7 +15,6 @@ module.exports = async (req, res) => {
       middleName,
       lastName
     });
-
     res.send(200).json(result);
   } catch (error) {
     res.status(500).json({
