@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     });
     res.send(200).json(result);
   } catch (error) {
-    res.status(500).json({
+    res.send(500).json({
       message: `Applicant could not be created, try checking out https://docs.orbaone.com/rest-api/endpoints`
     });
   }
