@@ -944,10 +944,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@orbaone/api@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@orbaone/api/-/api-0.0.5.tgz#40b918868ea670154a87d71fb8ddbf298ed48351"
-  integrity sha512-yKPLiy8IQ+2NMRvAPnwgBmP/NeAm/whfDtEkIN2rKL8AKGILqaqLWJjCczBADGdO+HrmTa5wuR3IGVd3mr/pmQ==
+"@orbaone/api@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@orbaone/api/-/api-0.0.6.tgz#3bc3b18c60a6b0b7ed10e99f03a0922028e4a72e"
+  integrity sha512-K4hdXZqB7gsvbxn7XyqzCJY8n5PFNw7REjIxYIq/wPWDMr2LpBV91jfFuxRpmt7n/VCEgw44/5SmV1YRi8tKKg==
   dependencies:
     node-fetch "^2.6.1"
 
