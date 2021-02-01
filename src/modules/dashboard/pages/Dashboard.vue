@@ -147,7 +147,24 @@ export default {
             })
           });
           const json = await result.json();
-          if (json.applicantId) {
+          if (json.data) {
+            const { id: applicantId } = json.data;
+            renderButton({
+              apiKey: `${process.env.VUE_APP_API_KEY}`,
+              applicantId: `${applicantId}`,
+              disableStyle: true,
+              target: "#verify-me",
+              onCancelled: data => {
+                console.log(data);
+              },
+              onSuccess: data => {
+                console.log(data);
+              },
+              onError: err => {
+                console.log(err);
+              },
+              steps: ["welcome", "selfie", "document", "finish"]
+            });
             await localforage.setItem("applicantId", json.applicantId);
           } else {
             this.error = "Applicant could not be created :(";
@@ -156,28 +173,6 @@ export default {
           this.error = "Applicant could not be created";
         }
       }
-    }
-  },
-  async beforeMount() {
-    const applicantId = await localforage.getItem("applicantId");
-
-    if (applicantId) {
-      renderButton({
-        apiKey: `${process.env.VUE_APP_API_KEY}`,
-        applicantId: `${applicantId}`,
-        disableStyle: true,
-        target: "#verify-me",
-        onCancelled: data => {
-          console.log(data);
-        },
-        onSuccess: data => {
-          console.log(data);
-        },
-        onError: err => {
-          console.log(err);
-        },
-        steps: ["welcome", "selfie", "document", "finish"]
-      });
     }
   }
 };
