@@ -165,7 +165,7 @@ export default {
               },
               steps: ["welcome", "selfie", "document", "finish"]
             });
-            await localforage.setItem("applicantId", json.applicantId);
+            await localforage.setItem("applicantId", applicantId);
           } else {
             this.error = "Applicant could not be created :(";
           }
