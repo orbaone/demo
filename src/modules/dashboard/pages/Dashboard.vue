@@ -130,8 +130,8 @@
             <div class="flex flex-col sm:block mt-4">
               <p>Please verify your identity to begin booking</p>
               <button
-                class="bg-orange-500 text-white rounded px-4 py-2 mt-2"
-                @click="this.testNotifs"
+                class="bg-orange-500 opacity-50 text-white rounded px-4 py-2 mt-2"
+                disabled="true"
               >
                 Book Now
               </button>
@@ -247,9 +247,6 @@ export default {
         steps: ["welcome", "selfie", "document", "finish"]
       });
     }
-  },
-  methods: {
-    testNotifs() {}
   }
 };
 </script>
