@@ -195,7 +195,7 @@ export default {
                   title: "Identity Verification Cancelled",
                   text:
                     "Don't worry, you can always verify your identity later.",
-                  duration: 3000
+                  duration: 5000
                 });
               },
               onSuccess: () => {
@@ -203,7 +203,7 @@ export default {
                   group: "applicant-successful",
                   title: "Identity Submitted Successfully",
                   text: "Congrats! Your Identity is being processed.",
-                  duration: 3000
+                  duration: 5000
                 });
               },
               onError: err => {
@@ -230,7 +230,7 @@ export default {
             group: "applicant-cancelled",
             title: "Identity Verification Cancelled",
             text: "Don't worry, you can always verify your identity later.",
-            duration: 3000
+            duration: 5000
           });
         },
         onSuccess: () => {
@@ -238,7 +238,7 @@ export default {
             group: "applicant-successful",
             title: "Identity Submitted Successfully",
             text: "Congrats! Your Identity is being processed.",
-            duration: 3000
+            duration: 5000
           });
         },
         onError: err => {
