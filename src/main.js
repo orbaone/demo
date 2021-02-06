@@ -3,6 +3,7 @@ import App from "./App.vue";
 
 import "@/plugins/vuelidate";
 import "@/plugins/localforage";
+import "@/plugins/notifications";
 import "@/assets/css/index.css";
 
 import router from "./router";

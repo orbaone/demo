@@ -14,6 +14,40 @@
         <p class="banner-button-text">Verify my indentity</p>
       </button>
     </div>
+    <notifications group="applicant-successful" position="bottom right">
+      <template slot="body" slot-scope="props">
+        <div
+          class="flex items-center justify-center bg-white p-4 rounded-md shadow-md mb-5 mr-5"
+        >
+          <div class="flex items-center justify-center mr-4">
+            <img class="mx-auto w-full" src="@/assets/logo.png" alt="logo" />
+          </div>
+          <div>
+            <a class="font-bold text-green-700">
+              {{ props.item.title }}
+            </a>
+            <div class="text-sm" v-html="props.item.text"></div>
+          </div>
+        </div>
+      </template>
+    </notifications>
+    <notifications group="applicant-cancelled" position="bottom right">
+      <template slot="body" slot-scope="props">
+        <div
+          class="flex items-center justify-center bg-white p-4 rounded-md shadow-md mb-5 mr-5"
+        >
+          <div class="flex items-center justify-center mr-4">
+            <img class="mx-auto w-full" src="@/assets/logo.png" alt="logo" />
+          </div>
+          <div>
+            <a class="font-bold text-red-700">
+              {{ props.item.title }}
+            </a>
+            <div class="text-sm" v-html="props.item.text"></div>
+          </div>
+        </div>
+      </template>
+    </notifications>
     <div class="flex flex-col w-full sm:flex-row container mx-auto mt-10">
       <div class="w-full p-3 sm:w-2/3 sm:mr-5">
         <div class="flex flex-col items-baseline mb-5">
@@ -96,8 +130,8 @@
             <div class="flex flex-col sm:block mt-4">
               <p>Please verify your identity to begin booking</p>
               <button
-                class="bg-orange-500 opacity-75 text-white rounded px-4 py-2 mt-2"
-                disabled="true"
+                class="bg-orange-500 text-white rounded px-4 py-2 mt-2"
+                @click="this.testNotifs"
               >
                 Book Now
               </button>
@@ -127,6 +161,7 @@ export default {
       applicantId: ""
     };
   },
+
   async beforeCreate() {
     const applicantId = await localforage.getItem("applicantId");
     const firstName = await localforage.getItem("firstName");
@@ -154,11 +189,22 @@ export default {
               applicantId: `${applicantId}`,
               disableStyle: true,
               target: "#verify-me",
-              onCancelled: data => {
-                console.log(data);
+              onCancelled: () => {
+                this.$notify({
+                  group: "applicant-cancelled",
+                  title: "Identity Verification Cancelled",
+                  text:
+                    "Don't worry, you can always verify your identity later.",
+                  duration: 3000
+                });
               },
-              onSuccess: data => {
-                console.log(data);
+              onSuccess: () => {
+                this.$notify({
+                  group: "applicant-successful",
+                  title: "Identity Submitted Successfully",
+                  text: "Congrats! Your Identity is being processed.",
+                  duration: 3000
+                });
               },
               onError: err => {
                 console.log(err);
@@ -173,7 +219,37 @@ export default {
           this.error = "Applicant could not be created";
         }
       }
+    } else {
+      renderButton({
+        apiKey: `${process.env.VUE_APP_API_KEY}`,
+        applicantId: `${applicantId}`,
+        disableStyle: true,
+        target: "#verify-me",
+        onCancelled: () => {
+          this.$notify({
+            group: "applicant-cancelled",
+            title: "Identity Verification Cancelled",
+            text: "Don't worry, you can always verify your identity later.",
+            duration: 3000
+          });
+        },
+        onSuccess: () => {
+          this.$notify({
+            group: "applicant-successful",
+            title: "Identity Submitted Successfully",
+            text: "Congrats! Your Identity is being processed.",
+            duration: 3000
+          });
+        },
+        onError: err => {
+          console.log(err);
+        },
+        steps: ["welcome", "selfie", "document", "finish"]
+      });
     }
+  },
+  methods: {
+    testNotifs() {}
   }
 };
 </script>
