@@ -952,9 +952,9 @@
     node-fetch "^2.6.1"
 
 "@orbaone/core@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@orbaone/core/-/core-1.0.14.tgz#abc6fff4f556889d6430adb30ca2a550d1539c1f"
-  integrity sha512-xdGk0dhD8gk6uMPSREysSTAuiI6IoDeepDRVvbvkzUj/q1L9naRjcTh8vjhGuG257iB1DJ0p5PYaIxQo/FHaxQ==
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@orbaone/core/-/core-1.0.17.tgz#4970b686baea8dc89b74378e90e2fc344f1f4c2a"
+  integrity sha512-Vo2CS59by6wXcnBpXvBjY+uReksdQsNmHImGWHrh5Ekv5NUUFfsRtp7wd3hR1AobDDS9PTpLGUh2Z1xOUhwUPQ==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.1"
