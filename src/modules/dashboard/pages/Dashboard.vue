@@ -2,8 +2,8 @@
   <div class="dark-background">
     <div class="flex">
       <dashboard-sidebar class="" />
-      <div class="ml-10" style=" flex-grow: 100;">
-        <div class="flex justify-between items-center py-8 mr-10">
+      <div class="mx-10" style="flex-grow: 100">
+        <div class="flex justify-between items-center py-8">
           <div class="flex input-with-icon">
             <svg
               width="24"
@@ -84,9 +84,7 @@
           </div>
         </div>
         <h2 class="dashboard-header mb-5">Portfolio Analytics</h2>
-        <div
-          class="verify-container flex flex-col items-center justify-center mr-10"
-        >
+        <div class="verify-container flex flex-col items-center justify-center">
           <p class="analytics-header">
             It seems you haven’t verified your identity yet
           </p>
@@ -105,6 +103,104 @@
           </div>
           <div class="w-1/5">
             <h2 class="dashboard-header mb-5 mt-8">News</h2>
+            <div class="news-container mt-2">
+              <div class="news-item px-5">
+                <div class="flex items-center">
+                  <img
+                    class="coin-icon"
+                    src="@/assets/images/bitcoin.png"
+                    alt="Bitcoin Icon"
+                  />
+                  <p class="news-text ml-3">Bitcoin</p>
+                </div>
+                <div class="flex">
+                  <p class="news-text mt-2">
+                    Welcome to Orba's own fake crypto exchange company demo.
+                    This shows what Orba One's integration.
+                  </p>
+                  <svg
+                    width="15"
+                    height="20"
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 13L7 7L1 1"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <hr class="my-5" />
+              <div class="news-item px-5">
+                <div class="flex items-center">
+                  <img
+                    class="coin-icon"
+                    src="@/assets/images/eth.png"
+                    alt="Ethereum Icon"
+                  />
+                  <p class="news-text ml-3">Etherenum</p>
+                </div>
+                <div class="flex">
+                  <p class="news-text mt-2">
+                    Welcome to Orba's own fake crypto exchange company demo.
+                    This shows what Orba One's integration.
+                  </p>
+                  <svg
+                    width="15"
+                    height="20"
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 13L7 7L1 1"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <hr class="my-5" />
+              <div class="news-item px-5">
+                <div class="flex items-center">
+                  <img
+                    class="coin-icon"
+                    src="@/assets/images/dogecoin.png"
+                    alt="Ethereum Icon"
+                  />
+                  <p class="news-text ml-3">Dogecoin</p>
+                </div>
+                <div class="flex">
+                  <p class="news-text mt-2">
+                    Welcome to Orba's own fake crypto exchange company demo.
+                    This shows what Orba One's integration.
+                  </p>
+                  <svg
+                    width="15"
+                    height="20"
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 13L7 7L1 1"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <hr class="my-5" />
+            </div>
           </div>
         </div>
       </div>
@@ -182,6 +278,38 @@ export default {
 };
 </script>
 <style scoped>
+hr {
+  opacity: 0.2;
+  border: 1px solid #ffffff;
+}
+
+.news-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.coin-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.news-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.news-container {
+  background: #141534;
+  border-radius: 5px;
+  @apply py-5;
+}
+
 .analytics-header {
   font-family: "Inter", sans-serif;
   font-weight: 600;
