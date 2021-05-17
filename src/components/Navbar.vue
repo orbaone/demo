@@ -2,37 +2,25 @@
   <div class="flex p-5 justify-between items-center container mx-auto">
     <div>
       <router-link to="/">
-        <img class="h-10 mx-auto mb-4" src="@/assets/logo.png" alt="logo" />
+        <h2 class="navbar-header text-white">Cryptotrade</h2>
       </router-link>
     </div>
     <div class="flex items-center" v-if="!isAuthenticated">
-      <router-link to="/" class="mr-3">Home</router-link>
-      <p class="hidden sm:block mr-3 opacity-50">Destination</p>
-      <p class="hidden sm:block mr-3 opacity-50">About</p>
-      <p class="hidden sm:block mr-5 opacity-50">Partner</p>
-      <router-link
-        to="/login"
-        class="px-3 py-2 border-2 border-orange-400 rounded text-orange-400 mr-4"
-      >
-        Login
-      </router-link>
-      <router-link
-        to="/register"
-        class="px-3 py-2 border-2 border-orange-400 rounded bg-orange-400 text-white"
-      >
-        Register
-      </router-link>
+      <router-link to="/" class="mr-5 navbar-link">About Us</router-link>
+      <router-link to="/" class="mr-5 navbar-link">Pricing</router-link>
+      <router-link to="/login" class="btn-outline mr-5"> Login </router-link>
+      <router-link to="/register" class="btn-primary"> Register </router-link>
     </div>
     <div class="flex items-center" v-else>
       <router-link
-        class="text-gray-800 mr-3 underline"
+        class="mr-3 underline text-white"
         :to="{ name: 'dashboard' }"
       >
         Hi {{ this.firstName }}
       </router-link>
-      <p class="text-orange-500 font-bold cursor-pointer" @click="this.logout">
+      <button class="btn-primary" @click="this.logout">
         Logout
-      </p>
+      </button>
     </div>
   </div>
 </template>
@@ -67,3 +55,21 @@ export default {
   }
 };
 </script>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,500;0,600;0,700;0,900;1,500&display=swap");
+.navbar-header {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+}
+
+.navbar-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+}
+</style>

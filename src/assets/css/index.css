@@ -1,27 +1,38 @@
+@import "buttons.css"; /* Using a string */
+
+* {
+  font-family: "Exo", sans-serif;
+}
+
+html {
+  background: url("../images/background.png") no-repeat center fixed;
+  background-size: cover;
+}
+
 .text-sm {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
-.input{
-    transition: border-color 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 4px;
-}
-
-
-.input:focus{
-    outline: none;
-    border: 1px solid #4B7BEC;
+.input {
+  transition: border-color 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 4px;
 }
 
-.input-error, .input-error:focus {
-    border: 1px solid #FC5C65;
-    color: #FC5C65;
+.input:focus {
+  outline: none;
+  border: 1px solid #4b7bec;
+}
+
+.input-error,
+.input-error:focus {
+  border: 1px solid #fc5c65;
+  color: #fc5c65;
 }
 
 .form-error {
-    color:#FC5C65;
-    font-size: 0.7em;
+  color: #fc5c65;
+  font-size: 0.7em;
 }
