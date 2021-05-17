@@ -1,120 +1,113 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
+
     <form
-      class="flex flex-col flex-grow p-4 justify-center  w-full max-w-md mx-auto"
+      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto"
       @submit.prevent="submitForm"
     >
-      <p class="text-3xl mt-3 text-gray-800 font-bold font-serif">
-        Start Travelling,
-      </p>
-      <p class="text-3xl mb-3 text-gray-800 font-bold font-serif">
-        Sign Up for Fake Travel
-      </p>
-      <p v-if="error" class="form-error font-bold text-sm my-3">
-        {{ error }}
-      </p>
-      <div class="flex flex-col mt-4">
-        <div class="name-fields flex justify-between">
-          <div class="first-name mr-4">
-            <label for="firstName" class="text-sm text-gray-700"
-              >First Name</label
-            >
-            <input
-              v-model="$v.registerForm.firstName.$model"
-              class="input"
-              type="text"
-              name="firstName"
-              autofocus
-              placeholder="John"
-              data-testid="register-first-name-input"
-            />
-            <div v-if="$v.registerForm.firstName.$error">
-              <p v-if="$v.registerForm.firstName.required" class="form-error">
-                Please enter your password
-              </p>
+      <div class="flex flex-col w-1/2 pr-20">
+        <h1 class="main-header">
+          Start trading today <br />Sign up for Cryptrade for free.
+        </h1>
+        <p class="sub-header text-white my-5">
+          Already have an account?
+          <router-link class="pink-text" to="/login">Login</router-link> instead
+        </p>
+        <p v-if="error" class="form-error font-bold text-sm my-3">
+          {{ error }}
+        </p>
+        <div class="flex flex-col">
+          <div class="name-fields flex justify-between">
+            <div class="first-name mr-4">
+              <label for="firstName" class="text-sm text-gray-700"
+                >First Name</label
+              >
+              <input
+                v-model="$v.registerForm.firstName.$model"
+                class="input"
+                type="text"
+                name="firstName"
+                autofocus
+                data-testid="register-first-name-input"
+              />
+              <div v-if="$v.registerForm.firstName.$error">
+                <p v-if="$v.registerForm.firstName.required" class="form-error">
+                  Please enter your password
+                </p>
+              </div>
+            </div>
+            <div class="last-name">
+              <label for="lastName" class="text-sm text-gray-700"
+                >Last Name</label
+              >
+              <input
+                v-model="$v.registerForm.lastName.$model"
+                class="input"
+                type="text"
+                name="lastName"
+                autofocus
+                data-testid="register-last-name-input"
+              />
+              <div v-if="$v.registerForm.lastName.$error">
+                <p v-if="$v.registerForm.lastName.required" class="form-error">
+                  Please enter your password
+                </p>
+              </div>
             </div>
           </div>
-          <div class="last-name">
-            <label for="lastName" class="text-sm text-gray-700"
-              >Last Name</label
-            >
-            <input
-              v-model="$v.registerForm.lastName.$model"
-              class="input"
-              type="text"
-              name="lastName"
-              autofocus
-              placeholder="Doe"
-              data-testid="register-last-name-input"
-            />
-            <div v-if="$v.registerForm.lastName.$error">
-              <p v-if="$v.registerForm.lastName.required" class="form-error">
-                Please enter your password
-              </p>
-            </div>
+        </div>
+        <div class="flex flex-col mt-4">
+          <label for="email" class="text-sm text-gray-700">Email</label>
+          <input
+            v-model="$v.registerForm.email.$model"
+            class="input"
+            type="text"
+            name="email"
+            autofocus
+            data-testid="register-email-input"
+          />
+          <div v-if="$v.registerForm.email.$error">
+            <p v-if="$v.registerForm.email.$invalid" class="form-error">
+              The email entered is invalid
+            </p>
+            <p v-else-if="$v.registerForm.email.required" class="form-error">
+              Please enter an email
+            </p>
           </div>
         </div>
-      </div>
-      <div class="flex flex-col mt-4">
-        <label for="email" class="text-sm text-gray-700">Email</label>
-        <input
-          v-model="$v.registerForm.email.$model"
-          class="input"
-          type="text"
-          name="email"
-          autofocus
-          data-testid="register-email-input"
-          placeholder="admin@example.com"
-        />
-        <div v-if="$v.registerForm.email.$error">
-          <p v-if="$v.registerForm.email.$invalid" class="form-error">
-            The email entered is invalid
-          </p>
-          <p v-else-if="$v.registerForm.email.required" class="form-error">
-            Please enter an email
-          </p>
+        <div class="flex flex-col mt-4">
+          <label for="password" class="text-sm text-gray-700">Password</label>
+          <input
+            v-model="$v.registerForm.password.$model"
+            class="input"
+            type="password"
+            name="password"
+            data-testid="register-password-input"
+          />
+          <div v-if="$v.registerForm.password.$error">
+            <p v-if="$v.registerForm.password.required" class="form-error">
+              Please enter your password
+            </p>
+          </div>
         </div>
+        <button
+          :disabled="this.$v.registerForm.$invalid"
+          class="btn-primary mt-5"
+          type="submit"
+          style="max-width: 153px"
+        >
+          <p class="inline" v-if="!loading">Sign Up</p>
+          <img
+            v-else
+            class="h-8 inline ml-3"
+            src="@/assets/images/loader.svg"
+            alt=""
+          />
+        </button>
       </div>
-      <div class="flex flex-col mt-4">
-        <label for="password" class="text-sm text-gray-700">Password</label>
-        <input
-          v-model="$v.registerForm.password.$model"
-          class="input"
-          type="password"
-          name="password"
-          data-testid="register-password-input"
-          placeholder="Password"
-        />
-        <div v-if="$v.registerForm.password.$error">
-          <p v-if="$v.registerForm.password.required" class="form-error">
-            Please enter your password
-          </p>
-        </div>
-      </div>
-      <button
-        :disabled="this.$v.registerForm.$invalid"
-        class="px-5 py-2 border-2 border-orange-400 bg-orange-400 rounded text-white mt-4"
-        type="submit"
-      >
-        <p class="inline" v-if="!loading">
-          Register
-        </p>
-        <img
-          v-else
-          class="h-8 inline ml-3"
-          src="@/assets/images/loader.svg"
-          alt=""
-        />
-      </button>
-      <div class="text-center mt-4">
-        <p>
-          Already have an Account?
-          <router-link class="text-primary font-bold" to="/login"
-            >Login</router-link
-          >
-          instead.
-        </p>
+      <div class="hidden sm:block w-1/2 mb-5 md:mb-0">
+        <img src="@/assets/images/signup-illus.svg" alt="Crytpo Machine" />
       </div>
     </form>
   </div>
@@ -176,4 +169,36 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.main-header {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 37px;
+  color: #ffffff;
+}
+
+.sub-header {
+  font-family: Exo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.pink-text {
+  color: #ff3c74;
+}
+
+label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  @apply mb-1;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+</style>
