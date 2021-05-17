@@ -7,7 +7,7 @@
     >
       <div class="flex flex-col md:w-1/2 md:pr-20">
         <h1 class="main-header">
-          Start trading today <br />Sign up for Cryptrade for free.
+          Start trading today <br />Sign up for Cryptotrade for free.
         </h1>
         <p class="sub-header text-white my-5">
           Already have an account?

@@ -5,7 +5,7 @@
       class="flex flex-col-reverse sm:flex-row flex-grow w-full items-center container mx-auto"
     >
       <div class="flex flex-col w-full p-4 sm:w-1/2">
-        <p class="small-header">Cryptrade</p>
+        <p class="small-header">Cryptotrade</p>
         <h1 class="main-header mt-4 max-w-md">Changing the way you trade.</h1>
         <div class="flex items-center mt-5 mb-8">
           <img

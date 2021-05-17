@@ -1,6 +1,6 @@
 <template>
   <div class="pl-5 pt-8">
-    <h1 class="sidebar-header">Cryptrade</h1>
+    <h1 class="sidebar-header">Cryptotrade</h1>
     <button class="btn-primary flex small-radius mt-8" style="borderadius: 5px">
       <svg
         width="24"
