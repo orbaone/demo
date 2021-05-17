@@ -11,8 +11,7 @@
 }
 
 .btn-primary {
-    border: 2px solid #ff3c74;
-
+  border: 2px solid #ff3c74;
   @apply flex items-center justify-center;
   padding: 8px 24px;
   background: #ff3c74;

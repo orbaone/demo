@@ -3,31 +3,45 @@
     <navbar />
     <div class="flex flex-grow w-full items-center container mx-auto">
       <div class="flex flex-col w-full p-4 sm:w-1/2">
-        <h1 class="text-6xl font-serif text-gray-800">
-          Explore and <br />Fake Travel
-        </h1>
-        <p class="text-gray-800 mb-10 mt-4">
-          Welcome to Orba's own fake travel company demo. <br />This shows what
-          Orba One's integration might look like. <br />Try creating an account
+        <p class="small-header">Cryptrade</p>
+        <h1 class="main-header mt-4 max-w-md">Changing the way you trade.</h1>
+        <div class="flex items-center mt-5 mb-8">
+          <img
+            class="crypto-coin mr-2"
+            src="@/assets/images/bitcoin.png"
+            alt="Bitcoin"
+          />
+          <img
+            class="crypto-coin mr-2"
+            src="@/assets/images/eth.png"
+            alt="Etherium"
+          />
+          <img
+            class="crypto-coin mr-2"
+            src="@/assets/images/dogecoin.png"
+            alt="Dogecoin"
+          />
+          <img
+            class="crypto-coin mr-2"
+            src="@/assets/images/monero.png"
+            alt="Monero"
+          />
+          <p class="font-bold para ml-5">and more.</p>
+        </div>
+        <p class="para mb-5">
+          Welcome to Orba's own fake crypto exchange company demo. This shows
+          what Orba One's integration might look like. Try creating an account
           and verifying your identity.
         </p>
-        <div class="flex flex-col sm:block">
-          <router-link
-            to="/login"
-            class="px-5 py-2 border-2 border-orange-400 rounded text-orange-400 mb-4 text-center sm:mr-4"
+        <div class="flex items-center">
+          <button class="btn-primary" style="width: 153px">Try for free</button>
+          <router-link to="/" class="para font-bold ml-8"
+            >See pricing pans</router-link
           >
-            Login
-          </router-link>
-          <router-link
-            to="/register"
-            class="px-5 py-2 border-2 border-orange-400 rounded bg-orange-400 text-center text-white"
-          >
-            Register
-          </router-link>
         </div>
       </div>
       <div class="hidden sm:block sm:w-1/2">
-        <img src="@/assets/hero.png" alt="" />
+        <img src="@/assets/images/main-illustration.svg" alt="Crytpo Machine" />
       </div>
     </div>
   </div>
@@ -63,3 +77,32 @@ export default {
   }
 };
 </script>
+<style scoped>
+.para {
+  font-size: 18px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.small-header {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 37px;
+  color: #ff3c74;
+}
+
+.main-header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 120%;
+  /* or 58px */
+
+  color: #ffffff;
+}
+
+.crypto-coin {
+  height: 36px;
+}
+</style>
