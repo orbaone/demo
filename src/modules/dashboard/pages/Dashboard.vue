@@ -1,126 +1,114 @@
 <template>
-  <div>
-    <navbar />
-    <div
-      class="navbar-banner text-white text-center flex flex-col md:flex-row items-center justify-center"
-    >
-      <p class="banner-text md:mb-0 mb-3 md:mr-8">
-        Please verify your indentity to begin booking
-      </p>
-      <button
-        class="banner-button flex items-center justify-center"
-        id="verify-me"
-      >
-        <p class="banner-button-text">Verify my indentity</p>
-      </button>
-    </div>
-    <div class="flex flex-col w-full sm:flex-row container mx-auto mt-10">
-      <div class="w-full p-3 sm:w-2/3 sm:mr-5">
-        <div class="flex flex-col items-baseline mb-5">
-          <h1 class="text-4xl font-serif mr-3">
-            Make your dream trip a reality
-          </h1>
-          <p class="text-xl font-medium">Featured destinations</p>
-        </div>
-        <div class="flex flex-col md:flex-row my-3">
-          <destination-card
-            background="/photo-one.png"
-            location="Raja Ampat"
-            country="Indonesia"
-            class="w-full mb-3 sm:w-1/3 sm:mr-3"
-          ></destination-card>
-          <destination-card
-            background="/photo-two.png"
-            location="Fanjingshan"
-            country="China"
-            class="w-full mb-3 sm:w-1/3 sm:mr-3"
-          ></destination-card>
-          <destination-card
-            background="/photo-three.png"
-            location="Vevey"
-            country="Switzerland"
-            class="w-full mb-3 sm:w-1/3 sm:mr-3"
-          ></destination-card>
-        </div>
-        <div class="flex flex-col sm:flex-row">
-          <destination-card
-            background="/photo-one.png"
-            location="Raja Ampat"
-            country="Indonesia"
-            class="w-full mb-3 sm:w-1/3 sm:mr-3"
-          ></destination-card>
-          <destination-card
-            background="/photo-two.png"
-            location="Fanjingshan"
-            country="China"
-            class="w-full mb-3 sm:w-1/3 sm:mr-3"
-          ></destination-card>
-          <destination-card
-            background="/photo-three.png"
-            location="Vevey"
-            country="Switzerland"
-            class="w-full mb-3 sm:w-1/3 sm:mr-3"
-          ></destination-card>
-        </div>
-      </div>
-      <div class="w-full sm:w-1/3 p-3">
-        <div class="flex flex-col items-baseline mt-3 mb-10">
-          <h1 class="text-2xl font-sans mr-3">
-            Trip finder
-          </h1>
-          <div class="flex flex-col w-full mt-4">
-            <div class="flex w-full">
-              <div class="w-1/2 mr-4">
-                <select name="" id="" class="input">
-                  <option value="location">Location</option>
-                </select>
-              </div>
-              <div class="w-1/2">
-                <select name="" id="" class="input">
-                  <option value="location">Activity</option>
-                </select>
-              </div>
-            </div>
-            <div class="flex w-full mt-4">
-              <div class="w-1/2 mr-4">
-                <select name="" id="" class="input">
-                  <option value="location">Class</option>
-                </select>
-              </div>
-              <div class="w-1/2">
-                <select name="" id="" class="input">
-                  <option value="location">Date</option>
-                </select>
-              </div>
-            </div>
-            <div class="flex flex-col sm:block mt-4">
-              <p>Please verify your identity to begin booking</p>
-              <button
-                class="bg-orange-500 opacity-75 text-white rounded px-4 py-2 mt-2"
-                disabled="true"
+  <div class="dark-background">
+    <div class="flex">
+      <dashboard-sidebar class="" />
+      <div class="ml-10" style=" flex-grow: 100;">
+        <div class="flex justify-between items-center py-8 mr-10">
+          <div class="flex input-with-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21 21L16.65 16.65"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <input
+              class="ml-5"
+              type="text"
+              placeholder="Search cryptocurrency"
+            />
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="ml-8 mr-5"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 9.33331C21 7.4768 20.2625 5.69632 18.9497 4.38357C17.637 3.07081 15.8565 2.33331 14 2.33331C12.1435 2.33331 10.363 3.07081 9.05025 4.38357C7.7375 5.69632 7 7.4768 7 9.33331C7 17.5 3.5 19.8333 3.5 19.8333H24.5C24.5 19.8333 21 17.5 21 9.33331Z"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.0184 24.5C15.8132 24.8536 15.5188 25.1471 15.1646 25.3511C14.8104 25.5551 14.4088 25.6625 14 25.6625C13.5912 25.6625 13.1896 25.5551 12.8354 25.3511C12.4812 25.1471 12.1868 24.8536 11.9817 24.5"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <img
+              class="user-pic mx-5"
+              src="@/assets/images/user-pic.png"
+              alt="Profile Picture Placeholder"
+            />
+            <div class="user-name mr-5">Amy Brown</div>
+            <button @click="this.logout">
+              <svg
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Book Now
-              </button>
-            </div>
+                <path
+                  d="M1 1L7 7L13 1"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-        <travel-blog-card />
+        <h2 class="dashboard-header mb-5">Portfolio Analytics</h2>
+        <div class="verify-container flex flex-col items-center justify-center">
+          <p class="analytics-header">
+            It seems you haven’t verified your identity yet
+          </p>
+          <p class="max-w-lg text-center mt-2 mb-5 analytics-paragraph">
+            To start trading we first need to verify your indentity. Please
+            click the button below to get your indentity verifcation process
+            started.
+          </p>
+          <button id="verify-me" class="btn-primary">
+            Verify My Indentity
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import Navbar from "@/components/Navbar";
 import localforage from "localforage";
 import { renderButton } from "@/web-sdk-lib/lib";
+import DashboardSidebar from "@/modules/dashboard/components/DashboardSidebar";
 
-import DestinationCard from "@/modules/dashboard/components/DestinationCard";
-import TravelBlogCard from "@/modules/dashboard/components/TravelBlogCard";
 export default {
   components: {
-    navbar: Navbar,
-    "destination-card": DestinationCard,
-    "travel-blog-card": TravelBlogCard
+    "dashboard-sidebar": DashboardSidebar
   },
   data() {
     return {
@@ -174,43 +162,75 @@ export default {
         }
       }
     }
+  },
+  methods: {
+    async logout() {
+      await localforage.setItem("isAuthenticated", false);
+      window.location.reload();
+    }
   }
 };
 </script>
 <style scoped>
-.navbar-banner {
-  width: 100vw;
-  height: 70px;
-  background: #fb8f1d;
-}
-
-.banner-text {
-  font-weight: bold;
+.analytics-header {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+  color: #ffffff;
 }
 
-.banner-button {
-  bottom: 88.25%;
-  width: 201px;
-  height: 44px;
-
-  background: #ffffff;
-  border-radius: 8px;
+.analytics-paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 120%;
+  color: #ffffff;
 }
 
-.banner-button-text {
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 18px;
-
-  color: #fb8f1d;
+.user-pic {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  border-radius: 5px;
 }
 
-@media only screen and (max-width: 768px) {
-  .navbar-banner {
-    height: auto;
-    padding: 20px;
-  }
+.verify-container {
+  background: #141534;
+  border-radius: 5px;
+  @apply py-20;
+}
+
+.dashboard-header {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+}
+
+.dark-background {
+  background-color: rgba(17, 18, 44, 1);
+  background-size: cover;
+  height: 100vh;
+}
+
+.input-with-icon {
+  background: #0f1024;
+  border-radius: 10px;
+  padding: 12px 60px 12px 20px;
+  flex-grow: 100;
+}
+
+.user-name {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+input {
+  color: white;
+  background: none;
+  width: 100%;
 }
 </style>

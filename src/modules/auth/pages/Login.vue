@@ -2,7 +2,7 @@
   <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
     <form
-      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto mt-10 md:mt-0 px-5 md:px-0"
+      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto mt-10 md:mt-0 px-5"
       @submit.prevent="submitForm"
     >
       <div class="flex flex-col md:w-1/2 md:pr-20">
@@ -128,12 +128,6 @@ export default {
 };
 </script>
 <style scoped>
-html {
-  background: url("../../../assets/images/background.png") no-repeat center
-    fixed;
-  background-size: cover;
-}
-
 .main-header {
   font-weight: bold;
   font-size: 28px;

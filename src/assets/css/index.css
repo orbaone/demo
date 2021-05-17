@@ -1,11 +1,17 @@
 @import "buttons.css"; /* Using a string */
 @import "input.css"; /* Using a string */
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,500;0,600;0,700;0,900;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 
 
 * {
   font-family: "Exo", sans-serif;
+}
+
+html {
+  background: url("../images/background.png") no-repeat center fixed;
+  background-size: cover;
 }
 
 html, body {

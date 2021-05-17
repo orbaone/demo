@@ -21,6 +21,10 @@
   color: #ffffff;
 }
 
+.btn-primary.small-radius {
+  border-radius: 5px;
+}
+
 .btn-outline,
 .btn-primary {
   padding: 8px 24px;
