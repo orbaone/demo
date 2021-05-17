@@ -154,11 +154,4 @@ label {
   color: #ffffff;
   @apply mb-1;
 }
-
-.custom-input {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  height: 51px;
-  @apply pl-5 w-full;
-}
 </style>

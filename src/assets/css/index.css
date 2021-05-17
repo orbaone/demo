@@ -1,4 +1,5 @@
 @import "buttons.css"; /* Using a string */
+@import "input.css"; /* Using a string */
 
 * {
   font-family: "Exo", sans-serif;

@@ -1,0 +1,21 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2) inset !important;
+ transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill
+{
+ -webkit-text-fill-color: white !important;
+}
+
+.custom-input {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  height: 51px;
+  color:white;
+  @apply pl-5 w-full;
+}
