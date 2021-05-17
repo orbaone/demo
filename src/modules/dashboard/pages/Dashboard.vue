@@ -112,7 +112,7 @@
 <script>
 import Navbar from "@/components/Navbar";
 import localforage from "localforage";
-import { renderButton } from "@orbaone/core";
+import { renderButton } from "@/web-sdk-lib/lib";
 
 import DestinationCard from "@/modules/dashboard/components/DestinationCard";
 import TravelBlogCard from "@/modules/dashboard/components/TravelBlogCard";
