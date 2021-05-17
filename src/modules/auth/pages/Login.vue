@@ -8,10 +8,10 @@
       <div class="flex flex-col w-1/2 pr-20">
         <div class="flex flex-col mt-4">
           <h1 class="main-header">
-            Start trading today <br />Sign up for Cryptrade for free.
+            Welcome Back! <br />Login to continue trading.
           </h1>
           <p class="sub-header text-white my-5">
-            Already have an account?
+            Don't have an account?
             <router-link class="pink-text" to="/register">Register</router-link>
             instead
           </p>
