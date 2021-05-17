@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-screen">
+  <div class="flex flex-col items-center justify-center h-screen py-2">
     <navbar />
     <div
       class="flex flex-col-reverse sm:flex-row flex-grow w-full items-center container mx-auto"
@@ -44,7 +44,7 @@
           >
         </div>
       </div>
-      <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md p-4">
+      <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md px-4">
         <img src="@/assets/images/main-illustration.svg" alt="Crytpo Machine" />
       </div>
     </div>
