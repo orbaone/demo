@@ -63,23 +63,9 @@
               src="@/assets/images/user-pic.png"
               alt="Profile Picture Placeholder"
             />
-            <div class="user-name mr-5">Amy Brown</div>
-            <button @click="this.logout">
-              <svg
-                width="14"
-                height="8"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L7 7L13 1"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+            <div class="user-name mr-5">{{ firstName }} {{ lastName }}</div>
+            <button class="btn-outline" @click="this.logout">
+              Logout
             </button>
           </div>
         </div>
@@ -223,15 +209,18 @@ export default {
   },
   data() {
     return {
-      applicantId: ""
+      applicantId: "",
+      firstName: "",
+      lastName: ""
     };
   },
   async beforeCreate() {
+    this.firstName = await localforage.getItem("firstName");
+    this.lastName = await localforage.getItem("lastName");
+
     const applicantId = await localforage.getItem("applicantId");
-    const firstName = await localforage.getItem("firstName");
-    const lastName = await localforage.getItem("lastName");
     if (!applicantId) {
-      if (firstName && lastName) {
+      if (this.firstName && this.lastName) {
         try {
           const result = await fetch("/api/createApplicant", {
             method: "POST",
@@ -240,9 +229,9 @@ export default {
               "Content-Type": "application/json"
             },
             body: JSON.stringify({
-              firstName,
+              firstName: this.firstName,
               middleName: "",
-              lastName
+              lastName: this.lastName
             })
           });
           const json = await result.json();

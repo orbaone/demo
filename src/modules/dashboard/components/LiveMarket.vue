@@ -111,24 +111,6 @@
           <th class="table-data">$66,498.10</th>
         </tr>
       </table>
-
-      <!-- <div class="headers flex justify-between px-10">
-        <p class="table-header">Cryptocurrency</p>
-        <p class="table-header">Last Price</p>
-        <p class="table-header">Buy Price</p>
-        <p class="table-header">Sell Price</p>
-        <p class="table-header">Lowest Price</p>
-        <p class="table-header">Highest Price</p>
-      </div>
-      <hr class="mt-3 mb-5 " />
-      <div class="single-row px-10 flex justify-between">
-        <p class="positive">Bitcoin</p>
-        <p class="table-data">$41,112.32</p>
-        <p class="table-data">$42,893.70</p>
-        <p class="table-data">$42,810.42</p>
-        <p class="table-data">$33,893.10</p>
-        <p class="table-data">$66,498.10</p>
-      </div> -->
     </div>
   </div>
 </template>
