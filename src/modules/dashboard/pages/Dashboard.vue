@@ -1,5 +1,5 @@
 <template>
-  <div class="dark-background">
+  <div class="dark-background pb-10">
     <div class="flex">
       <dashboard-sidebar class="" />
       <div class="mx-10" style="flex-grow: 100">
@@ -200,6 +200,9 @@
                 </div>
               </div>
               <hr class="my-5" />
+              <a href="" class="text-center mt-5 secondary-pink-text">
+                <p class="text-center">See latest news</p>
+              </a>
             </div>
           </div>
         </div>
@@ -278,6 +281,10 @@ export default {
 };
 </script>
 <style scoped>
+.secondary-pink-text {
+  color: rgba(255, 60, 116, 1);
+}
+
 hr {
   opacity: 0.2;
   border: 1px solid #ffffff;
@@ -349,7 +356,6 @@ hr {
 .dark-background {
   background-color: rgba(17, 18, 44, 1);
   background-size: cover;
-  height: 100vh;
 }
 
 .input-with-icon {

@@ -143,10 +143,6 @@ export default {
   line-height: 150%;
 }
 
-.pink-text {
-  color: #ff3c74;
-}
-
 label {
   font-weight: 500;
   font-size: 18px;
