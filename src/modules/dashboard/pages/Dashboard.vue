@@ -84,7 +84,9 @@
           </div>
         </div>
         <h2 class="dashboard-header mb-5">Portfolio Analytics</h2>
-        <div class="verify-container flex flex-col items-center justify-center">
+        <div
+          class="verify-container flex flex-col items-center justify-center mr-10"
+        >
           <p class="analytics-header">
             It seems you haven’t verified your identity yet
           </p>
@@ -96,6 +98,14 @@
           <button id="verify-me" class="btn-primary">
             Verify My Indentity
           </button>
+        </div>
+        <div class="flex">
+          <div class="w-4/5">
+            <h2 class="dashboard-header mb-5 mt-8">Live Market</h2>
+          </div>
+          <div class="w-1/5">
+            <h2 class="dashboard-header mb-5 mt-8">News</h2>
+          </div>
         </div>
       </div>
     </div>
