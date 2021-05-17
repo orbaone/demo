@@ -1,78 +1,75 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
     <form
-      class="flex flex-col flex-grow p-4 justify-center  w-full max-w-md mx-auto"
+      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto"
       @submit.prevent="submitForm"
     >
-      <div class="flex flex-col mt-4">
-        <p class="text-4xl mt-3 text-gray-800 font-bold font-serif">
-          Welcome back,
-        </p>
-        <p class="text-4xl mt-3 mb-3 text-gray-800 font-bold font-serif">
-          Log into Fake Travel
-        </p>
-        <p v-if="error" class="form-error font-bold text-sm my-3">
-          {{ error }}
-        </p>
-        <label for="email" class="text-sm text-gray-700">Email</label>
-        <input
-          v-model="$v.loginForm.email.$model"
-          class="input"
-          type="text"
-          name="email"
-          autofocus
-          data-testid="login-email-input"
-          placeholder="admin@example.com"
-        />
-        <div v-if="$v.loginForm.email.$error">
-          <p v-if="$v.loginForm.email.$invalid" class="form-error">
-            The email entered is invalid
+      <div class="flex flex-col w-1/2 pr-20">
+        <div class="flex flex-col mt-4">
+          <h1 class="main-header">
+            Start trading today <br />Sign up for Cryptrade for free.
+          </h1>
+          <p class="sub-header text-white my-5">
+            Already have an account?
+            <router-link class="pink-text" to="/register">Register</router-link>
+            instead
           </p>
-          <p v-else-if="$v.loginForm.email.required" class="form-error">
-            Please enter an email
+          <p v-if="error" class="form-error font-bold text-sm my-3">
+            {{ error }}
           </p>
+          <label for="email" class="text-sm text-gray-700">Email</label>
+          <input
+            v-model="$v.loginForm.email.$model"
+            class="custom-input"
+            type="text"
+            name="email"
+            autofocus
+            data-testid="login-email-input"
+            placeholder="admin@example.com"
+          />
+          <div v-if="$v.loginForm.email.$error">
+            <p v-if="$v.loginForm.email.$invalid" class="form-error">
+              The email entered is invalid
+            </p>
+            <p v-else-if="$v.loginForm.email.required" class="form-error">
+              Please enter an email
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="flex flex-col mt-4">
-        <label for="password" class="text-sm text-gray-700">Password</label>
-        <input
-          v-model="$v.loginForm.password.$model"
-          class="input"
-          type="password"
-          name="password"
-          data-testid="login-password-input"
-          placeholder="Password"
-        />
-        <div v-if="$v.loginForm.password.$error">
-          <p v-if="$v.loginForm.password.required" class="form-error">
-            Please enter your password
-          </p>
+        <div class="flex flex-col mt-4">
+          <label for="password" class="text-sm text-gray-700">Password</label>
+          <input
+            v-model="$v.loginForm.password.$model"
+            class="custom-input"
+            type="password"
+            name="password"
+            data-testid="login-password-input"
+            placeholder="Password"
+          />
+          <div v-if="$v.loginForm.password.$error">
+            <p v-if="$v.loginForm.password.required" class="form-error">
+              Please enter your password
+            </p>
+          </div>
         </div>
+        <button
+          :disabled="this.$v.loginForm.$invalid"
+          class="btn-primary mt-5"
+          type="submit"
+          style="max-width: 153px"
+        >
+          <p class="inline" v-if="!loading">Login</p>
+          <img
+            v-else
+            class="h-8 inline ml-3"
+            src="@/assets/images/loader.svg"
+            alt=""
+          />
+        </button>
       </div>
-      <button
-        :disabled="this.$v.loginForm.$invalid"
-        class="px-5 py-2 border-2 border-orange-400 bg-orange-400 rounded text-white mt-4"
-        type="submit"
-      >
-        <p class="inline" v-if="!loading">
-          Login
-        </p>
-        <img
-          v-else
-          class="h-8 inline ml-3"
-          src="@/assets/images/loader.svg"
-          alt=""
-        />
-      </button>
-      <div class="text-center mt-4">
-        <p>
-          Don't have an account?
-          <router-link class="text-primary font-bold" to="/register"
-            >Register</router-link
-          >
-          instead.
-        </p>
+      <div class="hidden sm:block w-1/2 mb-5 md:mb-0">
+        <img src="@/assets/images/login-illus.svg" alt="Crytpo Machine" />
       </div>
     </form>
   </div>
@@ -130,3 +127,38 @@ export default {
   }
 };
 </script>
+<style scoped>
+.main-header {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 37px;
+  color: #ffffff;
+}
+
+.sub-header {
+  font-family: Exo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.pink-text {
+  color: #ff3c74;
+}
+
+label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  @apply mb-1;
+}
+
+.custom-input {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  height: 51px;
+  @apply pl-5 w-full;
+}
+</style>

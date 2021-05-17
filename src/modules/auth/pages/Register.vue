@@ -25,7 +25,7 @@
               >
               <input
                 v-model="$v.registerForm.firstName.$model"
-                class="input"
+                class="custom-input"
                 type="text"
                 name="firstName"
                 autofocus
@@ -43,7 +43,7 @@
               >
               <input
                 v-model="$v.registerForm.lastName.$model"
-                class="input"
+                class="custom-input"
                 type="text"
                 name="lastName"
                 autofocus
@@ -61,8 +61,8 @@
           <label for="email" class="text-sm text-gray-700">Email</label>
           <input
             v-model="$v.registerForm.email.$model"
-            class="input"
             type="text"
+            class="custom-input"
             name="email"
             autofocus
             data-testid="register-email-input"
@@ -80,8 +80,8 @@
           <label for="password" class="text-sm text-gray-700">Password</label>
           <input
             v-model="$v.registerForm.password.$model"
-            class="input"
             type="password"
+            class="custom-input"
             name="password"
             data-testid="register-password-input"
           />
@@ -197,8 +197,10 @@ label {
   @apply mb-1;
 }
 
-input {
+.custom-input {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  height: 51px;
+  @apply pl-5 w-full;
 }
 </style>
