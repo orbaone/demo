@@ -128,6 +128,12 @@ export default {
 };
 </script>
 <style scoped>
+html {
+  background: url("../../../assets/images/background.png") no-repeat center
+    fixed;
+  background-size: cover;
+}
+
 .main-header {
   font-weight: bold;
   font-size: 28px;

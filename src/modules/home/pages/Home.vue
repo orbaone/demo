@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-screen py-2">
+  <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
     <div
       class="flex flex-col-reverse sm:flex-row flex-grow w-full items-center container mx-auto"
@@ -36,9 +36,13 @@
           and verifying your identity.
         </p>
         <div class="flex items-center">
-          <button class="btn-primary" style="max-width: 153px">
+          <router-link
+            to="/register"
+            class="btn-primary"
+            style="max-width: 153px"
+          >
             Try for free
-          </button>
+          </router-link>
           <router-link to="/" class="para font-bold ml-2 md:ml-8"
             >See pricing plans</router-link
           >

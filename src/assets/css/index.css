@@ -8,11 +8,6 @@
   font-family: "Exo", sans-serif;
 }
 
-html {
-  background: url("../images/background.png") no-repeat center fixed;
-  background-size: cover;
-}
-
 html, body {
   margin: 0;
   height: 100%;

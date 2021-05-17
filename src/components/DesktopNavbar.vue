@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar flex items-center justify-between">
+  <div class="navbar flex items-center justify-between py-5">
     <div>
       <router-link to="/">
         <h2 class="navbar-header text-white">Cryptotrade</h2>
