@@ -185,22 +185,10 @@
                   </svg>
                 </div>
               </div>
-<<<<<<< HEAD
-            </div>
-            <div class="flex flex-col sm:block mt-4">
-              <p>Please verify your identity to begin booking</p>
-              <button
-                class="bg-orange-500 opacity-50 text-white rounded px-4 py-2 mt-2"
-                disabled="true"
-              >
-                Book Now
-              </button>
-=======
               <hr class="my-5" />
               <a href="" class="text-center mt-5 secondary-pink-text">
                 <p class="text-center">See latest news</p>
               </a>
->>>>>>> staging
             </div>
           </div>
         </div>
