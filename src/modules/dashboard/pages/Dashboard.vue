@@ -99,11 +99,11 @@
         </div>
         <div class="flex">
           <div class="w-4/5">
-            <h2 class="dashboard-header mb-5 mt-8">Live Market</h2>
+            <live-market />
           </div>
           <div class="w-1/5">
             <h2 class="dashboard-header mb-5 mt-8">News</h2>
-            <div class="news-container mt-2">
+            <div class="section-container mt-2">
               <div class="news-item px-5">
                 <div class="flex items-center">
                   <img
@@ -214,10 +214,12 @@
 import localforage from "localforage";
 import { renderButton } from "@/web-sdk-lib/lib";
 import DashboardSidebar from "@/modules/dashboard/components/DashboardSidebar";
+import LiveMarket from "@/modules/dashboard/components/LiveMarket.vue";
 
 export default {
   components: {
-    "dashboard-sidebar": DashboardSidebar
+    "dashboard-sidebar": DashboardSidebar,
+    "live-market": LiveMarket
   },
   data() {
     return {
@@ -311,10 +313,10 @@ hr {
   color: #ffffff;
 }
 
-.news-container {
+.section-container {
   background: #141534;
   border-radius: 5px;
-  @apply py-5;
+  @apply py-8;
 }
 
 .analytics-header {
