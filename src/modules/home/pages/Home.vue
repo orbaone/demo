@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
-    <div class="flex flex-grow w-full items-center container mx-auto">
+    <div
+      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto"
+    >
       <div class="flex flex-col w-full p-4 sm:w-1/2">
         <p class="small-header">Cryptrade</p>
         <h1 class="main-header mt-4 max-w-md">Changing the way you trade.</h1>
@@ -34,13 +36,15 @@
           and verifying your identity.
         </p>
         <div class="flex items-center">
-          <button class="btn-primary" style="width: 153px">Try for free</button>
-          <router-link to="/" class="para font-bold ml-8"
-            >See pricing pans</router-link
+          <button class="btn-primary" style="max-width: 153px">
+            Try for free
+          </button>
+          <router-link to="/" class="para font-bold ml-2 md:ml-8"
+            >See pricing plans</router-link
           >
         </div>
       </div>
-      <div class="hidden sm:block sm:w-1/2">
+      <div class="hidden sm:block sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md">
         <img src="@/assets/images/main-illustration.svg" alt="Crytpo Machine" />
       </div>
     </div>
@@ -104,5 +108,20 @@ export default {
 
 .crypto-coin {
   height: 36px;
+}
+@media only screen and (max-width: 768px) {
+  .main-header {
+    font-size: 36px;
+    line-height: 120%;
+  }
+
+  .small-header {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .para {
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
 </style>
