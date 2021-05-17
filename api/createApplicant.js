@@ -1,7 +1,14 @@
 const fetch = require("node-fetch");
 
+const generateAuthKey = () => {
+  const apiKey = process.env.VUE_APP_API_KEY;
+  const secretKey = process.env.SECRET_KEY;
+  const stringToConvert = apiKey + ":" + secretKey;
+  return Buffer.from(stringToConvert).toString("base64");
+};
+
 async function postData(url = "", data = {}) {
-  const authKey = process.env.AUTH_KEY;
+  const authKey = generateAuthKey();
 
   const response = await fetch(url, {
     method: "POST",
