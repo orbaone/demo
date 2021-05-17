@@ -1,0 +1,38 @@
+.btn-outline {
+  border: 2px solid #ff3c74;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  @apply flex items-center justify-center;
+}
+
+.btn-primary {
+  border: 2px solid #ff3c74;
+  @apply flex items-center justify-center;
+  background: #ff3c74;
+  border-radius: 100px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.btn-primary.small-radius {
+  border-radius: 5px;
+}
+
+.btn-outline,
+.btn-primary {
+  padding: 8px 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-outline,
+  .btn-primary {
+    padding: 4px 12px;
+  }
+}

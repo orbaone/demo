@@ -1,27 +1,58 @@
+@import "buttons.css"; /* Using a string */
+@import "input.css"; /* Using a string */
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,500;0,600;0,700;0,900;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+
+* {
+  font-family: "Exo", sans-serif;
+}
+
+html {
+  background: url("../images/background.png") no-repeat center fixed;
+  background-size: cover;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .text-sm {
-    font-size: 0.9em;
-}
-.input{
-    transition: border-color 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 4px;
+  font-size: 0.9em;
 }
 
-
-.input:focus{
-    outline: none;
-    border: 1px solid #4B7BEC;
-}
-
-.input-error, .input-error:focus {
-    border: 1px solid #FC5C65;
-    color: #FC5C65;
+.input-error,
+.input-error:focus {
+  border: 1px solid #fc5c65;
+  color: #fc5c65;
 }
 
 .form-error {
-    color:#FC5C65;
-    font-size: 0.7em;
+  color: #fc5c65;
+  font-size: 0.7em;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  transition: all 0.1s;
+}
+button:disabled {
+  opacity: 0.5;
+}
+
+.entire-screen {
+  height: 100vh;
+}
+
+.pink-text {
+  color: #ff3c74;
 }

@@ -1,26 +1,42 @@
-import { OrbaOne } from "@orbaone/api";
+const fetch = require("node-fetch");
+
+const generateAuthKey = () => {
+  const apiKey = process.env.VUE_APP_API_KEY;
+  const secretKey = process.env.SECRET_KEY;
+  const stringToConvert = apiKey + ":" + secretKey;
+  return Buffer.from(stringToConvert).toString("base64");
+};
+
+async function postData(url = "", data = {}) {
+  const authKey = generateAuthKey();
+
+  const response = await fetch(url, {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+      AuthKey: authKey
+    },
+    redirect: "follow",
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(data)
+  });
+  return response.json();
+}
 
 module.exports = async (req, res) => {
-  const apiKey = process.env.API_KEY;
-  const secretKey = process.env.SECRET_KEY;
   const { firstName, middleName, lastName } = req.body;
-
-  const client = new OrbaOne({
-    apiKey,
-    apiSecret: secretKey
-  });
   try {
-    const result = await client.createApplicant({
+    postData("https://api-staging.orbaone.com/api/v1/applicants/create", {
       firstName,
       middleName,
       lastName
+    }).then(data => {
+      res.send(data);
     });
-    res.status(200);
-    res.json(result);
-  } catch (error) {
-    res.status(500);
-    res.json({
-      message: `Applicant could not be created, try checking out https://docs.orbaone.com/rest-api/endpoints`
-    });
+  } catch (e) {
+    console.log(e);
   }
 };
