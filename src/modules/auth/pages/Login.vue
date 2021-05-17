@@ -2,10 +2,10 @@
   <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
     <form
-      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto"
+      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto mt-10 md:mt-0 px-5 md:px-0"
       @submit.prevent="submitForm"
     >
-      <div class="flex flex-col w-1/2 pr-20">
+      <div class="flex flex-col md:w-1/2 md:pr-20">
         <div class="flex flex-col mt-4">
           <h1 class="main-header">
             Welcome Back! <br />Login to continue trading.

@@ -2,7 +2,7 @@
   <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
     <div
-      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto"
+      class="flex flex-col-reverse sm:flex-row flex-grow w-full items-center container mx-auto"
     >
       <div class="flex flex-col w-full p-4 sm:w-1/2">
         <p class="small-header">Cryptrade</p>
@@ -44,7 +44,7 @@
           >
         </div>
       </div>
-      <div class="hidden sm:block sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md">
+      <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md p-4">
         <img src="@/assets/images/main-illustration.svg" alt="Crytpo Machine" />
       </div>
     </div>

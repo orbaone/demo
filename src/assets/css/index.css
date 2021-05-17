@@ -10,6 +10,13 @@ html {
   background-size: cover;
 }
 
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .text-sm {
   font-size: 0.9em;
 }
@@ -23,4 +30,21 @@ html {
 .form-error {
   color: #fc5c65;
   font-size: 0.7em;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  transition: all 0.1s;
+}
+button:disabled {
+  opacity: 0.5;
+}
+
+.entire-screen {
+  height: 100vh;
 }

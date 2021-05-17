@@ -1,12 +1,11 @@
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
     <navbar />
-
     <form
-      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto"
+      class="flex flex-col sm:flex-row flex-grow w-full items-center container mx-auto px-5 md:px-0 md:px-0 mt-10 md:mt-0"
       @submit.prevent="submitForm"
     >
-      <div class="flex flex-col w-1/2 pr-20">
+      <div class="flex flex-col md:w-1/2 md:pr-20">
         <h1 class="main-header">
           Start trading today <br />Sign up for Cryptrade for free.
         </h1>
@@ -106,8 +105,12 @@
           />
         </button>
       </div>
-      <div class="hidden sm:block w-1/2 mb-5 md:mb-0">
-        <img src="@/assets/images/signup-illus.svg" alt="Crytpo Machine" />
+      <div class="hidden md:block w-1/2 mb-5 md:mb-0">
+        <img
+          class="mt-10 md:mt-0"
+          src="@/assets/images/signup-illus.svg"
+          alt="Crytpo Machine"
+        />
       </div>
     </form>
   </div>
