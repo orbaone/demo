@@ -21,12 +21,15 @@ async function postData(url = "", data = {}) {
 
 module.exports = async (req, res) => {
   const { firstName, middleName, lastName } = req.body;
-
-  postData("https://api-staging.orbaone.com/api/v1/applicants/create", {
-    firstName,
-    middleName,
-    lastName
-  }).then(data => {
-    res.send(data);
-  });
+  try {
+    postData("https://api-staging.orbaone.com/api/v1/applicants/create", {
+      firstName,
+      middleName,
+      lastName
+    }).then(data => {
+      res.send(data);
+    });
+  } catch (e) {
+    console.log(e);
+  }
 };
