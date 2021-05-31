@@ -90,6 +90,19 @@
             </p>
           </div>
         </div>
+        <div class="flex flex-col mt-4">
+          <label for="user-types" class="text-sm text-gray-700"
+            >User Type</label
+          >
+          <select
+            name="user-types"
+            id="user-types"
+            v-model="$v.registerForm.userType.$model"
+          >
+            <option value="User">User</option>
+            <option value="Company">Company</option>
+          </select>
+        </div>
         <button
           :disabled="this.$v.registerForm.$invalid"
           class="btn-primary mt-5"
@@ -133,7 +146,8 @@ export default {
         email: "",
         password: "",
         firstName: "",
-        lastName: ""
+        lastName: "",
+        userType: "User"
       }
     };
   },
@@ -151,6 +165,9 @@ export default {
       },
       password: {
         required
+      },
+      userType: {
+        required
       }
     }
   },
@@ -159,6 +176,7 @@ export default {
       try {
         await localforage.clear();
         localforage.setItem("firstName", this.registerForm.firstName);
+        localforage.setItem("userType", this.registerForm.userType);
         localforage.setItem("lastName", this.registerForm.lastName);
         localforage.setItem("email", this.registerForm.email);
         localforage.setItem("isAuthenticated", true).then(() => {
@@ -173,6 +191,22 @@ export default {
 </script>
 
 <style scoped>
+select {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  height: 51px;
+  color: white;
+  padding-left: 1.25rem;
+  width: 100%;
+}
+
+select option {
+  margin: 40px;
+  background: rgba(17, 18, 44, 1);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
 html {
   background: url("../../../assets/images/background.png") no-repeat center
     fixed;
