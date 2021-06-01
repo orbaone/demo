@@ -27,8 +27,8 @@ async function postData(url = "", data = {}) {
 }
 
 module.exports = async (req, res) => {
-  const { firstName, middleName, lastName, userType } = req.body;
-  if (userType === "Company") {
+  const { firstName, middleName, lastName, accountType } = req.body;
+  if (accountType === "Company") {
     try {
       postData("https://api-staging.orbaone.com/api/v1/companies", {
         name: "test",

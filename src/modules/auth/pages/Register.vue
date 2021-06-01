@@ -95,7 +95,7 @@
           <select
             name="user-types"
             id="user-types"
-            v-model="$v.registerForm.userType.$model"
+            v-model="$v.registerForm.accountType.$model"
           >
             <option value="User">Individual</option>
             <option value="Company">Company</option>
@@ -145,7 +145,7 @@ export default {
         password: "",
         firstName: "",
         lastName: "",
-        userType: "Individual"
+        accountType: "Individual"
       }
     };
   },
@@ -164,7 +164,7 @@ export default {
       password: {
         required
       },
-      userType: {
+      accountType: {
         required
       }
     }
@@ -174,7 +174,7 @@ export default {
       try {
         await localforage.clear();
         localforage.setItem("firstName", this.registerForm.firstName);
-        localforage.setItem("userType", this.registerForm.userType);
+        localforage.setItem("accountType", this.registerForm.accountType);
         localforage.setItem("lastName", this.registerForm.lastName);
         localforage.setItem("email", this.registerForm.email);
         localforage.setItem("isAuthenticated", true).then(() => {

@@ -210,13 +210,13 @@ export default {
       applicantId: "",
       firstName: "",
       lastName: "",
-      userType: ""
+      accountType: ""
     };
   },
   async beforeCreate() {
     this.firstName = await localforage.getItem("firstName");
     this.lastName = await localforage.getItem("lastName");
-    this.userType = await localforage.getItem("userType");
+    this.accountType = await localforage.getItem("accountType");
 
     const applicantId = await localforage.getItem("applicantId");
     if (!applicantId) {
@@ -232,12 +232,12 @@ export default {
               firstName: this.firstName,
               middleName: "",
               lastName: this.lastName,
-              userType: this.userType
+              accountType: this.accountType
             })
           });
           const json = await result.json();
           if (json.data) {
-            if (this.userType === "Company") {
+            if (this.accountType === "Company") {
               const { id: companyId } = json.data;
               renderButton({
                 apiKey: `${process.env.VUE_APP_API_KEY}`,
