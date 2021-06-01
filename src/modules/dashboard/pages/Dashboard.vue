@@ -64,9 +64,7 @@
               alt="Profile Picture Placeholder"
             />
             <div class="user-name mr-5">{{ firstName }} {{ lastName }}</div>
-            <button class="btn-outline" @click="this.logout">
-              Logout
-            </button>
+            <button class="btn-outline" @click="this.logout">Logout</button>
           </div>
         </div>
         <h2 class="dashboard-header mb-5">Portfolio Analytics</h2>
@@ -211,12 +209,14 @@ export default {
     return {
       applicantId: "",
       firstName: "",
-      lastName: ""
+      lastName: "",
+      accountType: ""
     };
   },
   async beforeCreate() {
     this.firstName = await localforage.getItem("firstName");
     this.lastName = await localforage.getItem("lastName");
+    this.accountType = await localforage.getItem("accountType");
 
     const applicantId = await localforage.getItem("applicantId");
     if (!applicantId) {
@@ -231,28 +231,49 @@ export default {
             body: JSON.stringify({
               firstName: this.firstName,
               middleName: "",
-              lastName: this.lastName
+              lastName: this.lastName,
+              accountType: this.accountType
             })
           });
           const json = await result.json();
           if (json.data) {
-            const { id: applicantId } = json.data;
-            renderButton({
-              apiKey: `${process.env.VUE_APP_API_KEY}`,
-              applicantId: `${applicantId}`,
-              disableStyle: true,
-              target: "#verify-me",
-              onCancelled: data => {
-                console.log(data);
-              },
-              onSuccess: data => {
-                console.log(data);
-              },
-              onError: err => {
-                console.log(err);
-              },
-              steps: ["welcome", "selfie", "document", "finish"]
-            });
+            if (this.accountType === "Company") {
+              const { id: companyId } = json.data;
+              renderButton({
+                apiKey: `${process.env.VUE_APP_API_KEY}`,
+                companyId: `${companyId}`,
+                disableStyle: true,
+                target: "#verify-me",
+                onCancelled: data => {
+                  console.log(data);
+                },
+                onSuccess: data => {
+                  console.log(data);
+                },
+                onError: err => {
+                  console.log(err);
+                },
+                steps: ["welcome", "selfie", "document", "finish"]
+              });
+            } else {
+              const { id: applicantId } = json.data;
+              renderButton({
+                apiKey: `${process.env.VUE_APP_API_KEY}`,
+                applicantId: `${applicantId}`,
+                disableStyle: true,
+                target: "#verify-me",
+                onCancelled: data => {
+                  console.log(data);
+                },
+                onSuccess: data => {
+                  console.log(data);
+                },
+                onError: err => {
+                  console.log(err);
+                },
+                steps: ["welcome", "selfie", "document", "finish"]
+              });
+            }
             await localforage.setItem("applicantId", applicantId);
           } else {
             this.error = "Applicant could not be created :(";
