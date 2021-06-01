@@ -91,15 +91,13 @@
           </div>
         </div>
         <div class="flex flex-col mt-4">
-          <label for="user-types" class="text-sm text-gray-700"
-            >User Type</label
-          >
+          <label for="user-types" class="text-sm text-gray-700">Account</label>
           <select
             name="user-types"
             id="user-types"
             v-model="$v.registerForm.userType.$model"
           >
-            <option value="User">User</option>
+            <option value="User">Individual</option>
             <option value="Company">Company</option>
           </select>
         </div>
@@ -147,7 +145,7 @@ export default {
         password: "",
         firstName: "",
         lastName: "",
-        userType: "User"
+        userType: "Individual"
       }
     };
   },
