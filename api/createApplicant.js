@@ -27,16 +27,30 @@ async function postData(url = "", data = {}) {
 }
 
 module.exports = async (req, res) => {
-  const { firstName, middleName, lastName } = req.body;
-  try {
-    postData("https://api-staging.orbaone.com/api/v1/applicants/create", {
-      firstName,
-      middleName,
-      lastName
-    }).then(data => {
-      res.send(data);
-    });
-  } catch (e) {
-    console.log(e);
+  const { firstName, middleName, lastName, accountType } = req.body;
+  if (accountType === "Company") {
+    try {
+      postData("https://api-staging.orbaone.com/api/v1/companies", {
+        name: "test",
+        registrationNumber: "test",
+        countryCode: "123"
+      }).then(data => {
+        res.send(data);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  } else {
+    try {
+      postData("https://api-staging.orbaone.com/api/v1/applicants/create", {
+        firstName,
+        middleName,
+        lastName
+      }).then(data => {
+        res.send(data);
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 };
