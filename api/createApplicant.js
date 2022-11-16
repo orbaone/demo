@@ -48,9 +48,9 @@ module.exports = async (req, res) => {
       postData(
         "https://staging-api-vendor.orbaone.com/api/v1/applicants/create",
         {
-          firstName,
-          middleName,
-          lastName
+          firstName: firstName,
+          middleName: middleName,
+          lastName: lastName
         }
       ).then(data => {
         res.send(data);
