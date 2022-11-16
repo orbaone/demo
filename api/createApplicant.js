@@ -26,6 +26,9 @@ async function postData(url = "", data = {}) {
     referrerPolicy: "no-referrer",
     body: JSON.stringify(data)
   });
+
+  console.log(response);
+
   return response.json();
 }
 
@@ -48,9 +51,9 @@ module.exports = async (req, res) => {
       postData(
         "https://staging-api-vendor.orbaone.com/api/v1/applicants/create",
         {
-          firstName,
-          middleName,
-          lastName
+          firstName: firstName,
+          middleName: middleName,
+          lastName: lastName
         }
       ).then(data => {
         res.send(data);
