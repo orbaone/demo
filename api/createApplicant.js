@@ -42,11 +42,14 @@ module.exports = async (req, res) => {
     }
   } else {
     try {
-      postData("https://staging-api-vendor.orbaone.com/api/v1/applicants/create", {
-        firstName,
-        middleName,
-        lastName
-      }).then(data => {
+      postData(
+        "https://staging-api-vendor.orbaone.com/api/v1/applicants/create",
+        {
+          firstName,
+          middleName,
+          lastName
+        }
+      ).then(data => {
         res.send(data);
       });
     } catch (e) {
