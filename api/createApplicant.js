@@ -10,6 +10,9 @@ const generateAuthKey = () => {
 async function postData(url = "", data = {}) {
   const authKey = generateAuthKey();
 
+  console.log(process.env.VUE_APP_API_KEY);
+  console.log(process.env.SECRET_KEY);
+
   console.log(authKey);
   console.log(data);
 
