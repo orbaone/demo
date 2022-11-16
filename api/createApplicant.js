@@ -10,6 +10,9 @@ const generateAuthKey = () => {
 async function postData(url = "", data = {}) {
   const authKey = generateAuthKey();
 
+  console.log(authKey);
+  console.log(data);
+
   const response = await fetch(url, {
     method: "POST",
     mode: "cors",
