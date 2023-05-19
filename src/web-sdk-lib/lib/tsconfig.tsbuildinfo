@@ -203,7 +203,7 @@
       },
       "../src/helpers/types.ts": {
         "version": 1,
-        "signature": "-8499515371",
+        "signature": "-19723772820",
         "affectsGlobalScope": false
       },
       "../src/helpers/utils.ts": {
@@ -223,7 +223,7 @@
       },
       "../src/helpers/defaultconfig.ts": {
         "version": 1,
-        "signature": "-7262127600",
+        "signature": "1556361812",
         "affectsGlobalScope": false
       },
       "../src/elements/button.ts": {

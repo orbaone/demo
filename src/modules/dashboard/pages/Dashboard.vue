@@ -244,6 +244,7 @@ export default {
                 companyId: `${companyId}`,
                 disableStyle: true,
                 useAudioInstructions: true,
+                environment: "staging",
                 target: "#verify-me",
                 onCancelled: data => {
                   console.log(data);
@@ -263,6 +264,7 @@ export default {
                 applicantId: `${applicantId}`,
                 useAudioInstructions: true,
                 disableStyle: true,
+                environment: "staging",
                 target: "#verify-me",
                 onCancelled: data => {
                   console.log(data);
