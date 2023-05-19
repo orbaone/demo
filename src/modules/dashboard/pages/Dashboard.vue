@@ -196,7 +196,7 @@
 </template>
 <script>
 import localforage from "localforage";
-import { renderButton } from "@/web-sdk-lib/lib";
+import { renderButton } from "@orbaone/core";
 import DashboardSidebar from "@/modules/dashboard/components/DashboardSidebar";
 import LiveMarket from "@/modules/dashboard/components/LiveMarket.vue";
 
