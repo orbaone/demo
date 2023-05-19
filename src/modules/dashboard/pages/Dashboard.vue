@@ -243,6 +243,7 @@ export default {
                 apiKey: `${process.env.VUE_APP_API_KEY}`,
                 companyId: `${companyId}`,
                 disableStyle: true,
+                useAudioInstructions: true,
                 target: "#verify-me",
                 onCancelled: data => {
                   console.log(data);
@@ -260,6 +261,7 @@ export default {
               renderButton({
                 apiKey: `${process.env.VUE_APP_API_KEY}`,
                 applicantId: `${applicantId}`,
+                useAudioInstructions: true,
                 disableStyle: true,
                 target: "#verify-me",
                 onCancelled: data => {

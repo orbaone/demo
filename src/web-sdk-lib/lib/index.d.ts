@@ -4,6 +4,7 @@ interface OrbaOneConfig {
     applicantId?: string;
     companyId?: string;
     disableStyle?: boolean;
+    useAudioInstructions?: boolean;
     onSuccess: (result: any) => void;
     onError: (result: any) => void;
     onCancelled: (result: string) => void;
