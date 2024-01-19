@@ -241,8 +241,8 @@ export default {
             }
           );
           const json = await result.json();
-          if (json.data) {
-            const { isSuccessful, data } = json.data;
+          if (json) {
+            const { isSuccessful, data } = json;
 
             if (isSuccessful) {
               renderButton({
@@ -309,7 +309,7 @@ export default {
                 steps: ["welcome", "selfie", "document", "finish"]
               });
             }*/
-            await localforage.setItem("applicantId", applicantId);
+            await localforage.setItem("applicantId", data.id);
           } else {
             this.error = "Applicant could not be created :(";
           }
