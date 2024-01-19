@@ -222,21 +222,52 @@ export default {
     if (!applicantId) {
       if (this.firstName && this.lastName) {
         try {
-          const result = await fetch("/api/createApplicant", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              firstName: this.firstName,
-              middleName: "",
-              lastName: this.lastName,
-              accountType: this.accountType
-            })
-          });
+          const result = await fetch(
+            "https://staging-api-vendor.orbaone.com/api/v1/applicants/create",
+            {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                AuthKey:
+                  "ZGYzOTBiNGVmZGNlNDIzZWJkMzE1YjY2NTViZGRiY2E6M2Q2ODk5NTdmN2I3NGFmYThjNDVhYzVjZTJjMTkyYTQ="
+              },
+              body: JSON.stringify({
+                firstName: this.firstName,
+                middleName: "",
+                lastName: this.lastName,
+                accountType: this.accountType
+              })
+            }
+          );
           const json = await result.json();
           if (json.data) {
+            const { isSuccessful, data } = json.data;
+
+            if (isSuccessful) {
+              renderButton({
+                apiKey: `${process.env.VUE_APP_API_KEY}`,
+                applicantId: `${data.id}`,
+                useAudioInstructions: true,
+                disableStyle: true,
+                environment: "staging",
+                target: "#verify-me",
+                onCancelled: data => {
+                  console.log(data);
+                },
+                onSuccess: data => {
+                  console.log(data);
+                },
+                onError: err => {
+                  console.log(err);
+                },
+                steps: ["welcome", "selfie", "document", "finish"]
+              });
+            } else {
+              console.log(json);
+            }
+
+            /*
             if (this.accountType === "Company") {
               const { id: companyId } = json.data;
               renderButton({
@@ -277,7 +308,7 @@ export default {
                 },
                 steps: ["welcome", "selfie", "document", "finish"]
               });
-            }
+            }*/
             await localforage.setItem("applicantId", applicantId);
           } else {
             this.error = "Applicant could not be created :(";
