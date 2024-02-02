@@ -951,6 +951,11 @@
   dependencies:
     node-fetch "^2.6.1"
 
+"@orbaone/core@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@orbaone/core/-/core-1.2.1.tgz#3eac1915ecfcdf97bf0c1687040061de59db8afd"
+  integrity sha512-dijdll4a0bvLkrLeuuBvQ9dhT0xrdfPpK2QjeTln73AIf3/9tMqvQayHdH/aFFZbDVE/O6S76Gqk1VgFU69OIQ==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.1"
   resolved "https://registry.npm.taobao.org/@samverschueren/stream-to-observable/download/@samverschueren/stream-to-observable-0.3.1.tgz#a21117b19ee9be70c379ec1877537ef2e1c63301"
