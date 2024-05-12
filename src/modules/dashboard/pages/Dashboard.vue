@@ -28,11 +28,7 @@
               />
             </svg>
 
-            <input
-              class="ml-5"
-              type="text"
-              placeholder="Search cryptocurrency"
-            />
+            <input class="ml-5" type="text" placeholder="Search" />
           </div>
           <div class="flex items-center">
             <svg
@@ -95,12 +91,12 @@
                     src="@/assets/images/bitcoin.png"
                     alt="Bitcoin Icon"
                   />
-                  <p class="news-text ml-3">Bitcoin</p>
+                  <p class="news-text ml-3">Pension Latest</p>
                 </div>
                 <div class="flex">
                   <p class="news-text mt-2">
-                    Welcome to Orba's own fake crypto exchange company demo.
-                    This shows what Orba One's integration.
+                    Welcome to Orba's demo pension fund management. This shows
+                    what Orba One's integration is.
                   </p>
                   <svg
                     width="15"
@@ -120,73 +116,6 @@
                 </div>
               </div>
               <hr class="my-5" />
-              <div class="news-item px-5">
-                <div class="flex items-center">
-                  <img
-                    class="coin-icon"
-                    src="@/assets/images/eth.png"
-                    alt="Ethereum Icon"
-                  />
-                  <p class="news-text ml-3">Etherenum</p>
-                </div>
-                <div class="flex">
-                  <p class="news-text mt-2">
-                    Welcome to Orba's own fake crypto exchange company demo.
-                    This shows what Orba One's integration.
-                  </p>
-                  <svg
-                    width="15"
-                    height="20"
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 13L7 7L1 1"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <hr class="my-5" />
-              <div class="news-item px-5">
-                <div class="flex items-center">
-                  <img
-                    class="coin-icon"
-                    src="@/assets/images/dogecoin.png"
-                    alt="Ethereum Icon"
-                  />
-                  <p class="news-text ml-3">Dogecoin</p>
-                </div>
-                <div class="flex">
-                  <p class="news-text mt-2">
-                    Welcome to Orba's own fake crypto exchange company demo.
-                    This shows what Orba One's integration.
-                  </p>
-                  <svg
-                    width="15"
-                    height="20"
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 13L7 7L1 1"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <hr class="my-5" />
-              <a href="" class="text-center mt-5 secondary-pink-text">
-                <p class="text-center">See latest news</p>
-              </a>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@
       <div class="flex flex-col md:w-1/2 md:pr-20">
         <div class="flex flex-col mt-4">
           <h1 class="main-header">
-            Welcome Back! <br />Login to continue trading.
+            Welcome Back!
           </h1>
           <p class="sub-header text-white my-5">
             Don't have an account?
@@ -69,7 +69,7 @@
         </button>
       </div>
       <div class="hidden sm:block w-1/2 mb-5 md:mb-0">
-        <img src="@/assets/images/login-illus.svg" alt="Crytpo Machine" />
+        <img src="@/assets/images/login-illus.svg" alt="Design" />
       </div>
     </form>
   </div>

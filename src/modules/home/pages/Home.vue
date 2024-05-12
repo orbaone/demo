@@ -5,35 +5,15 @@
       class="flex flex-col-reverse sm:flex-row flex-grow w-full items-center container mx-auto"
     >
       <div class="flex flex-col w-full p-4 sm:w-1/2">
-        <p class="small-header">Cryptotrade</p>
-        <h1 class="main-header mt-4 max-w-md">Changing the way you trade.</h1>
-        <div class="flex items-center mt-5 mb-8">
-          <img
-            class="crypto-coin mr-2"
-            src="@/assets/images/bitcoin.png"
-            alt="Bitcoin"
-          />
-          <img
-            class="crypto-coin mr-2"
-            src="@/assets/images/eth.png"
-            alt="Etherium"
-          />
-          <img
-            class="crypto-coin mr-2"
-            src="@/assets/images/dogecoin.png"
-            alt="Dogecoin"
-          />
-          <img
-            class="crypto-coin mr-2"
-            src="@/assets/images/monero.png"
-            alt="Monero"
-          />
-          <p class="font-bold para ml-5">and more.</p>
-        </div>
+        <p class="small-header">Orba Pensions</p>
+        <h1 class="main-header mt-4 max-w-md">
+          Changing the way you process KYC.
+        </h1>
+
         <p class="para mb-5">
-          Welcome to Orba's own fake crypto exchange company demo. This shows
-          what Orba One's integration might look like. Try creating an account
-          and verifying your identity.
+          Welcome to Orba's own pensions demo verification app. This shows what
+          Orba One's integration might look like. Try creating an account and
+          verifying your identity.
         </p>
         <div class="flex items-center">
           <router-link
@@ -49,7 +29,7 @@
         </div>
       </div>
       <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md px-4">
-        <img src="@/assets/images/main-illustration.svg" alt="Crytpo Machine" />
+        <img src="@/assets/images/login-illus.svg" alt="Design" />
       </div>
     </div>
   </div>

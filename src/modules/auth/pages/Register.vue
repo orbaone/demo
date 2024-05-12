@@ -6,9 +6,6 @@
       @submit.prevent="submitForm"
     >
       <div class="flex flex-col md:w-1/2 md:pr-20">
-        <h1 class="main-header">
-          Start trading today <br />Sign up for Cryptotrade for free.
-        </h1>
         <p class="sub-header text-white my-5">
           Already have an account?
           <router-link class="pink-text" to="/login">Login</router-link> instead
@@ -117,11 +114,7 @@
         </button>
       </div>
       <div class="hidden md:block w-1/2 mb-5 md:mb-0">
-        <img
-          class="mt-10 md:mt-0"
-          src="@/assets/images/signup-illus.svg"
-          alt="Crytpo Machine"
-        />
+        <img src="@/assets/images/login-illus.svg" alt="Design" />
       </div>
     </form>
   </div>
