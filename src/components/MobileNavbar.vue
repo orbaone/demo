@@ -1,7 +1,7 @@
 <template>
   <div class="navbar flex items-center justify-between px-4 md:px-0 py-5">
     <router-link to="/">
-      <h2 class="navbar-header text-white">Cryptotrade</h2>
+      <h2 class="navbar-header text-white">Orba Pensions</h2>
     </router-link>
     <svg
       width="24"

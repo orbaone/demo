@@ -1,114 +1,95 @@
 <template>
   <div>
-    <h2 class="dashboard-header mb-5 mt-8">Live Market</h2>
+    <h2 class="dashboard-header mb-5 mt-8">Recent Transactions</h2>
     <div class="section-container mr-20">
       <table style="width:100%">
         <tr class="px-10">
-          <th class="table-header pb-3">Cryptocurrency</th>
-          <th class="table-header pb-3">Last Price</th>
-          <th class="table-header pb-3">Buy Price</th>
-          <th class="table-header pb-3">Sell Price</th>
-          <th class="table-header pb-3">Lowest Price</th>
-          <th class="table-header pb-3">Highest Price</th>
+          <th class="table-header pb-3">Date</th>
+          <th class="table-header pb-3">Amount</th>
+          <th class="table-header pb-3">Description</th>
+          <th class="table-header pb-3">Type</th>
+          <th class="table-header pb-3">Category</th>
+          <th class="table-header pb-3">Merchant</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="positive pb-2 pt-3">Bitcoin</th>
+          <th class="positive pb-2 pt-3">2024-05-01</th>
           <th class="table-data">$41,112.32</th>
-          <th class="table-data">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="table-data">ATM Withdrawal</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Withdrawal</th>
+          <th class="table-data">ATM</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="negative pb-2 pt-3">Ethereum</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="negative pb-2 pt-3">2024-05-03</th>
+          <th class="table-data">$200.00</th>
+          <th class="table-data">Restaurant Dinner</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Dining</th>
+          <th class="table-data">Local Bistro</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="negative pb-2 pt-3">Binance Coin</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="positive pb-2 pt-3">2024-05-05</th>
+          <th class="table-data">$120.00</th>
+          <th class="table-data">Utility Bill Payment</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Utilities</th>
+          <th class="table-data">Electric Company</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="positive pb-2 pt-3">Cardano</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="negative pb-2 pt-3">2024-05-06</th>
+          <th class="table-data">$25.00</th>
+          <th class="table-data">Coffee Shop</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Food & Drink</th>
+          <th class="table-data">Starbucks</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="negative pb-2 pt-3">Dogecoin</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="positive pb-2 pt-3">2024-05-07</th>
+          <th class="table-data">$150.00</th>
+          <th class="table-data">Clothing Store</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Shopping</th>
+          <th class="table-data">H&M</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="positive pb-2 pt-3">Tether</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="negative pb-2 pt-3">2024-05-08</th>
+          <th class="table-data">$90.00</th>
+          <th class="table-data">Concert Tickets</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Entertainment</th>
+          <th class="table-data">Ticketmaster</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
         </tr>
         <tr>
-          <th class="negative pb-2 pt-3">XRP</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
+          <th class="positive pb-2 pt-3">2024-05-09</th>
+          <th class="table-data">$40.00</th>
+          <th class="table-data">Movie Theater</th>
+          <th class="table-data">Debit</th>
+          <th class="table-data">Entertainment</th>
+          <th class="table-data">AMC Theatres</th>
         </tr>
         <tr>
           <th colspan="6"><hr class="" /></th>
-        </tr>
-        <tr>
-          <th class="negative pb-2 pt-3">Polkadot</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
-        </tr>
-        <tr>
-          <th colspan="6"><hr class="" /></th>
-        </tr>
-        <tr>
-          <th class="positive pb-2 pt-3">Internet Computer</th>
-          <th class="table-data">$41,112.32</th>
-          <th class="table-data ">$42,893.70</th>
-          <th class="table-data">$42,810.42</th>
-          <th class="table-data">$33,893.10</th>
-          <th class="table-data">$66,498.10</th>
         </tr>
       </table>
     </div>

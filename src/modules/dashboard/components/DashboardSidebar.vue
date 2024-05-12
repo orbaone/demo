@@ -1,6 +1,6 @@
 <template>
   <div class="pl-5 pt-8">
-    <h1 class="sidebar-header">Cryptotrade</h1>
+    <h1 class="sidebar-header">Orba Pensions</h1>
     <button class="btn-primary flex small-radius mt-8" style="borderadius: 5px">
       <svg
         width="24"
@@ -59,39 +59,7 @@
         </svg>
         <p class="sidebar-link ml-3">Portfolio</p>
       </div>
-      <div class="flex items-center mb-10">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M6 20V14"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M18 20V10"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M12 20V4"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
 
-        <p class="sidebar-link ml-3">Live Market</p>
-      </div>
       <div class="flex items-center mb-10">
         <svg
           width="24"

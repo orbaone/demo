@@ -2,7 +2,7 @@
   <div class="navbar flex items-center justify-between py-5">
     <div>
       <router-link to="/">
-        <h2 class="navbar-header text-white">Cryptotrade</h2>
+        <h2 class="navbar-header text-white">Orba Pensions</h2>
       </router-link>
     </div>
     <div class="flex items-center" v-if="!isAuthenticated">
