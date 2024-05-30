@@ -113,9 +113,7 @@
           />
         </button>
       </div>
-      <div class="hidden md:block w-1/2 mb-5 md:mb-0">
-        <img src="@/assets/images/login-illus.svg" alt="Design" />
-      </div>
+      <div class="hidden md:block w-1/2 mb-5 md:mb-0"></div>
     </form>
   </div>
 </template>

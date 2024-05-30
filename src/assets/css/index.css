@@ -54,5 +54,6 @@ button:disabled {
 }
 
 .pink-text {
-  color: #ff3c74;
+  color: #fff;
+  font-weight: bold;
 }

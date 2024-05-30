@@ -60,7 +60,7 @@
               alt="Profile Picture Placeholder"
             />
             <div class="user-name mr-5">{{ firstName }} {{ lastName }}</div>
-            <button class="btn-outline" @click="this.logout">Logout</button>
+            <button class="btn-primary" @click="this.logout">Logout</button>
           </div>
         </div>
         <h2 class="dashboard-header mb-5">Portfolio Analytics</h2>
@@ -288,7 +288,7 @@ hr {
 }
 
 .section-container {
-  background: #141534;
+  background: #000;
   border-radius: 5px;
   @apply py-8;
 }
@@ -316,7 +316,6 @@ hr {
 }
 
 .verify-container {
-  background: #141534;
   border-radius: 5px;
   @apply py-20;
 }
@@ -330,12 +329,11 @@ hr {
 }
 
 .dark-background {
-  background-color: rgba(17, 18, 44, 1);
   background-size: cover;
 }
 
 .input-with-icon {
-  background: #0f1024;
+  background: #000;
   border-radius: 10px;
   padding: 12px 60px 12px 20px;
   flex-grow: 100;
