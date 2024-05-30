@@ -15,18 +15,7 @@
           Orba One's integration might look like. Try creating an account and
           verifying your identity.
         </p>
-        <div class="flex items-center">
-          <router-link
-            to="/register"
-            class="btn-primary"
-            style="max-width: 153px"
-          >
-            Try for free
-          </router-link>
-          <router-link to="/" class="para font-bold ml-2 md:ml-8"
-            >See pricing plans</router-link
-          >
-        </div>
+        <div class="flex items-center"></div>
       </div>
       <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md px-4"></div>
     </div>
