@@ -186,6 +186,7 @@ export default {
                 },
                 onSuccess: data => {
                   console.log(data);
+                  alert("Applicant Verification Process was completed.");
                 },
                 onError: err => {
                   console.log(err);
