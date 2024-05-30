@@ -8,7 +8,9 @@
     <div class="flex items-center" v-if="!isAuthenticated">
       <router-link to="/" class="mr-5 navbar-link">About Us</router-link>
       <router-link to="/" class="mr-5 navbar-link">Pricing</router-link>
-      <router-link to="/login" class="btn-outline mr-5"> Login </router-link>
+      <router-link to="/login" class="btn-outline mr-5 no-border btn-primary">
+        Login
+      </router-link>
       <router-link to="/register" class="btn-primary"> Register </router-link>
     </div>
     <div class="flex items-center" v-else>
@@ -72,5 +74,9 @@ export default {
 
 .navbar {
   overflow-x: hidden;
+}
+
+.no-border {
+  border: 0px !important;
 }
 </style>

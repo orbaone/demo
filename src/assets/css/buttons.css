@@ -10,9 +10,9 @@
 }
 
 .btn-primary {
-  border: 2px solid #ff3c74;
+  border: 2px solid #000;
   @apply flex items-center justify-center;
-  background: #ff3c74;
+  background: #000;
   border-radius: 100px;
 
   font-weight: bold;

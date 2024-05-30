@@ -28,9 +28,7 @@
           >
         </div>
       </div>
-      <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md px-4">
-        <img src="@/assets/images/login-illus.svg" alt="Design" />
-      </div>
+      <div class="sm:w-1/2 mb-5 md:mb-0 md:max-w-none max-w-md px-4"></div>
     </div>
   </div>
 </template>
@@ -77,7 +75,7 @@ export default {
   font-weight: 900;
   font-size: 28px;
   line-height: 37px;
-  color: #ff3c74;
+  color: #fff;
 }
 
 .main-header {
