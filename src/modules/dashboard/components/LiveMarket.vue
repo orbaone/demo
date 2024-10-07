@@ -82,7 +82,7 @@ hr {
 }
 
 .section-container {
-  background: #000;
+  background: #00A4EF;
   border-radius: 5px;
   @apply py-8;
 }

@@ -289,7 +289,7 @@ hr {
 }
 
 .section-container {
-  background: #000;
+  background: #00A4EF;
   border-radius: 5px;
   @apply py-8;
 }
@@ -334,7 +334,7 @@ hr {
 }
 
 .input-with-icon {
-  background: #000;
+  background: #00A4EF;
   border-radius: 10px;
   padding: 12px 60px 12px 20px;
   flex-grow: 100;
