@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="dashboard-header mb-5 mt-8">Recent Pension History</h2>
+    <h2 class="dashboard-header mb-5 mt-8">Recent Account History</h2>
     <div class="section-container mr-20">
       <table style="width:100%">
         <tr class="px-10">

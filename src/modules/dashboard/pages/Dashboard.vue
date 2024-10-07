@@ -91,11 +91,11 @@
                     src="@/assets/images/bitcoin.png"
                     alt="Bitcoin Icon"
                   />
-                  <p class="news-text ml-3">Pension Latest</p>
+                  <p class="news-text ml-3">Credit Union Latest</p>
                 </div>
                 <div class="flex">
                   <p class="news-text mt-2">
-                    Welcome to Orba's demo pension fund management. This shows
+                    Welcome to Orba's demo credit union. This shows
                     what Orba One's integration is.
                   </p>
                   <svg

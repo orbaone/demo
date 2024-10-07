@@ -5,13 +5,13 @@
       class="flex flex-col-reverse sm:flex-row flex-grow w-full items-center container mx-auto"
     >
       <div class="flex flex-col w-full p-4 sm:w-1/2">
-        <p class="small-header">Orba Pensions</p>
+        <p class="small-header">Orba Credit Union</p>
         <h1 class="main-header mt-4 max-w-md">
           Changing the way you process KYC.
         </h1>
 
         <p class="para mb-5">
-          Welcome to Orba's own pensions demo verification app. This shows what
+          Welcome to Orba's own credit union demo verification app. This shows what
           Orba One's integration might look like. Try creating an account and
           verifying your identity.
         </p>
